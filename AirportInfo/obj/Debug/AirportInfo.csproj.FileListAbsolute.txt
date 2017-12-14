@@ -1,0 +1,10 @@
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportInfo.exe.config
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportInfo.exe
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportInfo.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.FormFlights.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.Properties.Resources.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormMain.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.csproj.GenerateResource.Cache
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.exe
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.csprojResolveAssemblyReference.cache
