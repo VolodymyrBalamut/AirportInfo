@@ -3,17 +3,100 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AirportData
 {
     public class Plane : Base<Plane,string>
     {
-        public string PlaneCode;
-        public string PlaneName;
-        public string Speed;
-        public string Distance;
-        public int Seats;
+        private string planeCode;
+        public string PlaneCode
+        {
+            get
+            {
+                return planeCode;
+            }
+            set
+            {
+                if(value.Length>0 && value.Length <= 10)
+                {
+                    planeCode = value;
+                }
+            }
+        }
+        private string planeName;
+        public string PlaneName
+        {
+            get
+            {
+                return planeName;
+            }
+            set
+            {
+                if (value.Length > 0 && value.Length <= 50)
+                {
+                    if (regStr.IsMatch(value))
+                    {
+                        planeName = value;
+                    }
+                } 
+            }
+        }
+        private string speed;
+        public string Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                if (value.Length > 0 && value.Length <= 20)
+                {
+                    if (regStr.IsMatch(value))
+                    {
+                        speed = value;
+                    }
+                }
+            }
+        }
+        public string distance;
+        public string Distance
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                if (value.Length > 0 && value.Length <= 20)
+                {
+                    if (regStr.IsMatch(value))
+                    {
+                        distance = value;
+                    }
+                }
+            }
+        }
+        private int seats;
+        public string Seats
+        {
+            get
+            {
+                return seats.ToString();
+            }
+            set
+            {
+                if (value.Length > 0 && value.Length <= 20)
+                {
+                    if (regNum.Match(value).Success)
+                    {
+                        seats = Convert.ToInt32(value);
+                    }
+                }
+            }
+        }
 
         public override bool Delete()
         {
@@ -68,7 +151,7 @@ namespace AirportData
                     temp.PlaneName = rdr[1].ToString();
                     temp.Speed = rdr[2].ToString();
                     temp.Distance = rdr[3].ToString();
-                    temp.Seats = Convert.ToInt32(rdr[4]);
+                    temp.Seats = rdr[4].ToString();
                     //словник об'єктів
                     Items.Add(temp.PlaneCode, temp);
                 }
