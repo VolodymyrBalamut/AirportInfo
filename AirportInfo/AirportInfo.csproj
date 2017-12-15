@@ -46,98 +46,87 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="model\User.cs" />
-    <Compile Include="view\FormActualFlightConf.cs">
+    <Compile Include="AirportView\FormActualFlightConf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormActualFlightConf.Designer.cs">
+    <Compile Include="AirportView\FormActualFlightConf.Designer.cs">
       <DependentUpon>FormActualFlightConf.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormAirport.cs">
+    <Compile Include="AirportView\FormAirport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormAirport.Designer.cs">
+    <Compile Include="AirportView\FormAirport.Designer.cs">
       <DependentUpon>FormAirport.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormCity.cs">
+    <Compile Include="AirportView\FormCity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormCity.Designer.cs">
+    <Compile Include="AirportView\FormCity.Designer.cs">
       <DependentUpon>FormCity.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormCompany.cs">
+    <Compile Include="AirportView\FormCompany.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormCompany.Designer.cs">
+    <Compile Include="AirportView\FormCompany.Designer.cs">
       <DependentUpon>FormCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormConfig.cs">
+    <Compile Include="AirportView\FormConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormConfig.Designer.cs">
+    <Compile Include="AirportView\FormConfig.Designer.cs">
       <DependentUpon>FormConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormCountry.cs">
+    <Compile Include="AirportView\FormCountry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormCountry.Designer.cs">
+    <Compile Include="AirportView\FormCountry.Designer.cs">
       <DependentUpon>FormCountry.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormFlights.cs">
+    <Compile Include="AirportView\FormFlights.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormFlights.Designer.cs">
+    <Compile Include="AirportView\FormFlights.Designer.cs">
       <DependentUpon>FormFlights.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\ActualFlight.cs" />
-    <Compile Include="model\Airport.cs" />
-    <Compile Include="model\Base.cs" />
-    <Compile Include="model\City.cs" />
-    <Compile Include="model\Company.cs" />
-    <Compile Include="model\Country.cs" />
-    <Compile Include="model\Flight.cs" />
-    <Compile Include="model\Plane.cs" />
-    <Compile Include="model\StatusFlightType.cs" />
-    <Compile Include="model\Terminal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\FormLogin.cs">
+    <Compile Include="AirportView\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormLogin.Designer.cs">
+    <Compile Include="AirportView\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormMain.cs">
+    <Compile Include="AirportView\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormMain.Designer.cs">
+    <Compile Include="AirportView\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\FormPlane.cs">
+    <Compile Include="AirportView\FormPlane.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FormPlane.Designer.cs">
+    <Compile Include="AirportView\FormPlane.Designer.cs">
       <DependentUpon>FormPlane.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\FormActualFlightConf.resx">
+    <EmbeddedResource Include="AirportView\FormActualFlightConf.resx">
       <DependentUpon>FormActualFlightConf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormAirport.resx">
+    <EmbeddedResource Include="AirportView\FormAirport.resx">
       <DependentUpon>FormAirport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormCity.resx">
+    <EmbeddedResource Include="AirportView\FormCity.resx">
       <DependentUpon>FormCity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormCompany.resx">
+    <EmbeddedResource Include="AirportView\FormCompany.resx">
       <DependentUpon>FormCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormConfig.resx">
+    <EmbeddedResource Include="AirportView\FormConfig.resx">
       <DependentUpon>FormConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormCountry.resx">
+    <EmbeddedResource Include="AirportView\FormCountry.resx">
       <DependentUpon>FormCountry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormFlights.resx">
+    <EmbeddedResource Include="AirportView\FormFlights.resx">
       <DependentUpon>FormFlights.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -149,13 +138,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\FormLogin.resx">
+    <EmbeddedResource Include="AirportView\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormMain.resx">
+    <EmbeddedResource Include="AirportView\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\FormPlane.resx">
+    <EmbeddedResource Include="AirportView\FormPlane.resx">
       <DependentUpon>FormPlane.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

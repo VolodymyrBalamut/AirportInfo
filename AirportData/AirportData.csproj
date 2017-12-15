@@ -41,18 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActualFlight.cs" />
-    <Compile Include="Airport.cs" />
-    <Compile Include="Base.cs" />
-    <Compile Include="City.cs" />
-    <Compile Include="Company.cs" />
-    <Compile Include="Country.cs" />
-    <Compile Include="Flight.cs" />
-    <Compile Include="Plane.cs" />
+    <Compile Include="AirportModel\ActualFlight.cs" />
+    <Compile Include="AirportModel\Airport.cs" />
+    <Compile Include="AirportModel\Base.cs" />
+    <Compile Include="AirportModel\City.cs" />
+    <Compile Include="AirportModel\Company.cs" />
+    <Compile Include="AirportModel\Country.cs" />
+    <Compile Include="AirportModel\Flight.cs" />
+    <Compile Include="AirportModel\Plane.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatusFlight.cs" />
-    <Compile Include="Terminal.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="AirportModel\StatusFlight.cs" />
+    <Compile Include="AirportModel\Terminal.cs" />
+    <Compile Include="AirportModel\User.cs" />
+    <Compile Include="AirportModel\UserRole.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

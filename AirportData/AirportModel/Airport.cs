@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirportInfo.model
+namespace AirportData
 {
-    public class Airport: Base<Airport>
+    public class Airport: Base<Airport,string>
     {
         public string AirportCode;
         public string AirportName;
         public string CountryCode;
         public string CityName;
 
-        public static Dictionary<string, Airport> Items = new Dictionary<string, Airport>();
+       // public static Dictionary<string, Airport> Items = new Dictionary<string, Airport>();
 
         public Airport() { }
         public Airport(string AirportCode, string AirportName, string CountryCode, string CityName)
@@ -25,13 +25,42 @@ namespace AirportInfo.model
             this.CityName = CityName;
         }
 
-        public override void Delete()
+        public override bool Delete()
         {
-            throw new NotImplementedException();
+            bool success = false;
+            try
+            {
+                // Open the connection
+                conn.Open();
+
+                // prepare command string
+                string query = @"
+                 delete from tbAirport
+                 where AirportCode = @FlightCode";
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@AirportCode";
+                param1.Value = this.AirportCode;
+                // 1. Instantiate a new command
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add(param1);
+                cmd.ExecuteNonQuery();
+                success = true;
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                    Items.Remove(this.AirportCode);
+                }
+            }
+            return success;
         }
 
-        public override void Get()
+        public override bool GetAll()
         {
+            bool success = false;
             try
             {
                 conn.Open();
@@ -53,6 +82,7 @@ namespace AirportInfo.model
                     Items.Add(temp.AirportCode, temp);
                 }
                 conn.Close();
+                success = true;
             }
             finally
             {
@@ -62,10 +92,12 @@ namespace AirportInfo.model
                     conn.Close();
                 }
             }
+            return success;
         }
 
-        public override void Insert()
+        public override bool Insert()
         {
+            bool success = false;
             try
             {
                 conn.Open();
@@ -87,6 +119,7 @@ namespace AirportInfo.model
                 cmd.Parameters.Add(param2);
                 cmd.Parameters.Add(param3);
                 cmd.ExecuteNonQuery();
+                success = true;
             }
             finally
             {
@@ -96,11 +129,52 @@ namespace AirportInfo.model
                     conn.Close();
                 }
             }
+            return success;
         }
 
-        public override void Update()
+        public override bool Update()
         {
-            throw new NotImplementedException();
+            bool success = false;
+            try
+            {
+                conn.Open();
+                // prepare command string
+                string query = @"
+                update tbAirport
+                set AirportName = @AirportName,
+                    CountryCode = @CountryCode,
+                    CityName = @CityName
+                where AirportCode = @AirportCode";
+
+                // 1. Instantiate a new command with command text only
+
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@AirportName";
+                param1.Value = this.AirportName;
+                SqlParameter param2 = new SqlParameter();
+                param2.ParameterName = "@CountryCode";
+                param2.Value = this.CountryCode;
+                SqlParameter param3 = new SqlParameter();
+                param3.ParameterName = "@CityName";
+                param3.Value = this.CityName;
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add(param1);
+                cmd.Parameters.Add(param2);
+                cmd.Parameters.Add(param3);
+                // 3. Call ExecuteNonQuery to send command
+                cmd.ExecuteNonQuery();
+                success = true;
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return success;
         }
 
         public override string ToString()

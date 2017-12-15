@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirportInfo.model
+namespace AirportData
 {
-    public class Flight : Base<Flight>
+    public class Flight : Base<Flight,string>
     {
-        public static Dictionary<string, Flight> Items = new Dictionary<string, Flight>();
         public string FlightCode{ get; set; }
         public string DepartTime { get; set; }
         
@@ -312,8 +311,9 @@ namespace AirportInfo.model
 
             }
         }
-        public override void Delete()
+        public override bool Delete()
         {
+            bool success = false;
             try
             {
                 // Open the connection
@@ -330,7 +330,7 @@ namespace AirportInfo.model
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(param1);
                 cmd.ExecuteNonQuery();
-
+                success = true;
             }
             finally
             {
@@ -341,7 +341,7 @@ namespace AirportInfo.model
                     //Items.Remove(this.ID);
                 }
             }
-        
+            return success;
     }
 
         public static Flight GetFlight(string FlightCode)
@@ -386,8 +386,9 @@ namespace AirportInfo.model
             }
             
         } 
-        public override void Get()
+        public override bool GetAll()
         {
+            bool success = false;
             try
             {
                 conn.Open();
@@ -413,6 +414,7 @@ namespace AirportInfo.model
                     Items.Add(temp.FlightCode, temp);
                 }
                 conn.Close();
+                success = true;
             }
             finally
             {
@@ -422,10 +424,12 @@ namespace AirportInfo.model
                     conn.Close();
                 }
             }
+            return success;
         }
 
-        public override void Insert()
+        public override bool Insert()
         {
+            bool success = false;
             try
             {
                 conn.Open();
@@ -468,6 +472,7 @@ namespace AirportInfo.model
                 cmd.Parameters.Add(param8);
                 cmd.Parameters.Add(param9);
                 cmd.ExecuteNonQuery();
+                success = true;
             }
             finally
             {
@@ -477,10 +482,12 @@ namespace AirportInfo.model
                     conn.Close();
                 }
             }
+            return success;
         }
 
-        public override void Update()
+        public override bool Update()
         {
+            bool success = false;
             try
             {
                 conn.Open();
@@ -534,6 +541,7 @@ namespace AirportInfo.model
                 cmd.Parameters.Add(param10);
                 // 3. Call ExecuteNonQuery to send command
                 cmd.ExecuteNonQuery();
+                success = true;
             }
             finally
             {
@@ -543,6 +551,7 @@ namespace AirportInfo.model
                     conn.Close();
                 }
             }
+            return success;
         }
     }
 }

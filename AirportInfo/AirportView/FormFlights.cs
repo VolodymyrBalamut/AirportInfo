@@ -1,7 +1,8 @@
-﻿using AirportInfo.model;
+﻿using AirportData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,7 +15,7 @@ namespace AirportInfo
 {
     public partial class FormFlights : Form
     {
-        protected SqlConnection conn = Base<ActualFlight>.conn;
+        protected SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["AirportInfo.Properties.Settings.dbAirportInfoConnectionString"].ConnectionString);
         protected DataSet ds;
         protected SqlDataAdapter da;
         protected SqlCommandBuilder cmdBldr;
@@ -82,9 +83,9 @@ namespace AirportInfo
         }
         private void FillForm()
         {
-            new Airport().Get();
-            new Company().Get();
-            new Plane().Get();
+            new Airport().GetAll();
+            new Company().GetAll();
+            new Plane().GetAll();
 
             comboBoxs["cbDepartAirport"].DataSource = Airport.Items.Values.ToList();
             comboBoxs["cbArriveAirport"].DataSource = Airport.Items.Values.ToList();

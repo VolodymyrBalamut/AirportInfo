@@ -1,4 +1,4 @@
-﻿using AirportInfo.model;
+﻿using AirportData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ namespace AirportInfo.view
 {
     public partial class FormCity : Form
     {
-        protected SqlConnection conn = Base<Country>.conn;
+        protected SqlConnection conn = Base<Country,string>.conn;
         protected DataSet ds;
         protected SqlDataAdapter da;
         public FormCity()

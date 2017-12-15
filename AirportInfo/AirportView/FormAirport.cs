@@ -1,4 +1,4 @@
-﻿using AirportInfo.model;
+﻿using AirportData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,40 +12,39 @@ using System.Windows.Forms;
 
 namespace AirportInfo.view
 {
-    public partial class FormCompany : Form
+    public partial class FormAirport : Form
     {
-        protected SqlConnection conn = Base<Country>.conn;
+        protected SqlConnection conn = Base<Country,string>.conn;
         protected DataSet ds;
         protected SqlDataAdapter da;
-        public FormCompany()
+        public FormAirport()
         {
             InitializeComponent();
-        }
-
-        private void FormCompany_Load(object sender, EventArgs e)
-        {
+            ds = new DataSet();
+            da = new SqlDataAdapter("select * from vwAirport", conn);
             this.BackColor = Color.DarkOrchid;
             this.FormBorderStyle = FormBorderStyle.Fixed3D;
+        }
 
-            ds = new DataSet();
-            da = new SqlDataAdapter("select * from vwCompany", conn);
-            da.Fill(ds, "vwCompany");
+        private void FormAirport_Load(object sender, EventArgs e)
+        {
+            da.Fill(ds, "vwAirport");
             dgv.DataSource = ds;
-            dgv.DataMember = "vwCompany";
-
-            dgv.Columns["CompanyCode"].HeaderText = "Код компанії";
-            dgv.Columns["CompanyName"].HeaderText = "Компанія";
+            dgv.DataMember = "vwAirport";
+            dgv.Columns["AirportCode"].HeaderText = "Код аеропорту";
+            dgv.Columns["AirportName"].HeaderText = "Аеропорт";
+            dgv.Columns["CountryCode"].HeaderText = "Код країни";
             dgv.Columns["CountryName"].HeaderText = "Країна";
-            dgv.Columns["Callsign"].HeaderText = "Дивіз";
+            dgv.Columns["CityName"].HeaderText = "Місто";
             dgv.AutoResizeColumns();
             dgv.ReadOnly = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Company.Refresh();
+            Airport.Refresh();
             ds.Clear();
-            da.Fill(ds, "vwCompany");
+            da.Fill(ds, "vwAirport");
         }
     }
 }
