@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="AirportInfo.Properties.Settings.dbAirportInfoConnectionString"
+        connectionString="Data Source=ACER\SQLEXPRESS;Initial Catalog=dbAirportInfo;Integrated Security=True"
+        providerName="System.Data.SqlClient" />
+  </connectionStrings>
+</configuration>

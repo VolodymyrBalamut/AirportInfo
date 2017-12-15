@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\User.cs" />
+    <Compile Include="view\FormActualFlightConf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormActualFlightConf.Designer.cs">
+      <DependentUpon>FormActualFlightConf.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FormAirport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="view\FormPlane.Designer.cs">
       <DependentUpon>FormPlane.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FormActualFlightConf.resx">
+      <DependentUpon>FormActualFlightConf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FormAirport.resx">
       <DependentUpon>FormAirport.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +171,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AirportData\AirportData.csproj">
+      <Project>{a6a60a13-509f-4da1-92bd-81666ef73a1c}</Project>
+      <Name>AirportData</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

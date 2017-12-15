@@ -1,0 +1,5 @@
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\AirportData.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\AirportData.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\obj\Debug\AirportData.csprojResolveAssemblyReference.cache
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\obj\Debug\AirportData.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\obj\Debug\AirportData.pdb

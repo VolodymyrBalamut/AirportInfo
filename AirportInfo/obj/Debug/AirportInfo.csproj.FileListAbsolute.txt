@@ -15,3 +15,6 @@ D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.v
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormAirport.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormPlane.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormCompany.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportData.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportData.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormActualFlightConf.resources
