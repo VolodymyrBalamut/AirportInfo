@@ -338,7 +338,7 @@ namespace AirportData
                 if (conn != null)
                 {
                     conn.Close();
-                    //Items.Remove(this.ID);
+                    Items.Remove(this.FlightCode);
                 }
             }
             return success;

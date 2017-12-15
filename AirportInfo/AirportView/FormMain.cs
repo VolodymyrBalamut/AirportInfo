@@ -27,14 +27,6 @@ namespace AirportInfo.view
         {
             
         }
-
-       
-
-        private void MainMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgv.AutoResizeColumns();
@@ -107,7 +99,6 @@ namespace AirportInfo.view
             dgv2.Columns["TerminalCode"].HeaderText = "Термінал";
             dgv2.Columns["StatusFlight"].HeaderText = "Статус";
             dgv2.Columns["ActualFlightDate"].Visible = false;
-            //dgv2.AutoResizeColumns();
             dgv2.ReadOnly = true;
         }
 

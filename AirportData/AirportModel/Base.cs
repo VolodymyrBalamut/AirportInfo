@@ -19,7 +19,7 @@ namespace AirportData
         public static Dictionary<V, T> Items = new Dictionary<V, T>();
         public override string ToString() { return ""; }
         public static readonly SqlConnection conn = new SqlConnection("Data Source=ACER\\SQLEXPRESS;Initial Catalog=dbAirportInfo;Integrated Security=True");
-        public static Regex regStr = new Regex("^[a-zA-Z0-9 ]*$");
-        public static Regex regNum = new Regex(@"^-?[0-9]{1,}\.?[0-9]{0,}$");
+        public static readonly Regex regStr = new Regex("^[a-zA-Z0-9 ]*$");
+        public static readonly Regex regNum = new Regex(@"^-?[0-9]{1,}\.?[0-9]{0,}$");
     }
 }

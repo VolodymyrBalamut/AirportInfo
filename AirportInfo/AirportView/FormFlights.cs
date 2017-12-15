@@ -55,14 +55,10 @@ namespace AirportInfo
             checkBoxs.Add("Sunday", checkBoxSunday);
 
             textBoxs.Add("tbFlightCode", tbFlightCode);
-           /* controller = new ControllerFlight(dgvFlights, bindingNavigator1, comboBoxs, checkBoxs, textBoxs);
-            controller.FillColumns();*/
         }
 
         private void FormFlights_Load(object sender, EventArgs e)
         {
-            //controller.LoadDB();
-            //dgvFlights.AutoResizeColumns();
             da.Fill(ds, "vwFlight");
             dgvFlights.DataSource = ds;
             dgvFlights.DataMember = "vwFlight";

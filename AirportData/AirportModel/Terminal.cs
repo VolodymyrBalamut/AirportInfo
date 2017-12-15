@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace AirportData
 {
@@ -118,7 +113,7 @@ namespace AirportData
                 string query = @"
                 update tbTerminal
                 set TerminalCode = @TerminalCode
-                where TerminalCode = @TerminalCode";
+                where TerminalCode = @TerminalCodeOld";
 
                 // 1. Instantiate a new command with command text only
 
