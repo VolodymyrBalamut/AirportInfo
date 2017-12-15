@@ -35,10 +35,6 @@ namespace AirportInfo.view
             da.Fill(ds, "tbTerminal");
             dgvTerminal.DataSource = ds;
             dgvTerminal.DataMember = "tbTerminal";
-            da2.Fill(ds, "tbUser");
-            dgvUser.DataSource = ds;
-            dgvUser.DataMember = "tbUser";
-
         }
     }
 }

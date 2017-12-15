@@ -34,10 +34,7 @@
             this.cbAirport = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvTerminal = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvUser = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerminal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -45,7 +42,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(265, 22);
+            this.label2.Location = new System.Drawing.Point(155, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 24);
             this.label2.TabIndex = 14;
@@ -93,34 +90,12 @@
             this.dgvTerminal.Size = new System.Drawing.Size(196, 150);
             this.dgvTerminal.TabIndex = 18;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.Gold;
-            this.label4.Location = new System.Drawing.Point(363, 154);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Користувачі";
-            // 
-            // dgvUser
-            // 
-            this.dgvUser.BackgroundColor = System.Drawing.Color.DarkOrchid;
-            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUser.Location = new System.Drawing.Point(481, 154);
-            this.dgvUser.Name = "dgvUser";
-            this.dgvUser.Size = new System.Drawing.Size(196, 150);
-            this.dgvUser.TabIndex = 20;
-            // 
             // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrchid;
-            this.ClientSize = new System.Drawing.Size(696, 376);
-            this.Controls.Add(this.dgvUser);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(369, 376);
             this.Controls.Add(this.dgvTerminal);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -131,7 +106,6 @@
             this.Text = "Налаштування";
             this.Load += new System.EventHandler(this.FormConfig_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerminal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +118,5 @@
         private System.Windows.Forms.ComboBox cbAirport;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvTerminal;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvUser;
     }
 }
