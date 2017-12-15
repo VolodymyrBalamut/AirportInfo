@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,25 @@ namespace AirportInfo.model
         public override void Update()
         {
             throw new NotImplementedException();
+        }
+
+        public static void Refresh()
+        {
+            try
+            {
+                conn.Open();
+                string query = @"exec spLoadCity";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }

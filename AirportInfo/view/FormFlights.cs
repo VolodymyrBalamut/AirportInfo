@@ -1,6 +1,4 @@
-﻿using AirportInfo.controller;
-using AirportInfo.model;
-using AirportInfo.readCSV;
+﻿using AirportInfo.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +14,6 @@ namespace AirportInfo
 {
     public partial class FormFlights : Form
     {
-        ControllerFlight controller;
         protected SqlConnection conn = Base<ActualFlight>.conn;
         protected DataSet ds;
         protected SqlDataAdapter da;

@@ -107,6 +107,24 @@ namespace AirportInfo.model
         {
             return AirportName;
         }
+        public static void Refresh()
+        {
+            try
+            {
+                conn.Open();
+                string query = @"exec spLoadAirport";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 
 

@@ -80,5 +80,24 @@ namespace AirportInfo.model
                 }
             }
         }
+
+        public static void Refresh()
+        {
+            try
+            {
+                conn.Open();
+                string query = @"exec spLoadCoutry";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

@@ -46,8 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\Controller.cs" />
-    <Compile Include="controller\ControllerFlight.cs" />
+    <Compile Include="model\User.cs" />
+    <Compile Include="view\FormAirport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormAirport.Designer.cs">
+      <DependentUpon>FormAirport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FormCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormCity.Designer.cs">
+      <DependentUpon>FormCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FormCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormCompany.Designer.cs">
+      <DependentUpon>FormCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FormConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormConfig.Designer.cs">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FormCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormCountry.Designer.cs">
+      <DependentUpon>FormCountry.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FormFlights.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,13 +95,39 @@
     <Compile Include="model\Terminal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="readCSV\AirportLoad.cs" />
+    <Compile Include="view\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FormPlane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FormPlane.Designer.cs">
+      <DependentUpon>FormPlane.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\FormAirport.resx">
+      <DependentUpon>FormAirport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormCity.resx">
+      <DependentUpon>FormCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormCompany.resx">
+      <DependentUpon>FormCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormConfig.resx">
+      <DependentUpon>FormConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormCountry.resx">
+      <DependentUpon>FormCountry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FormFlights.resx">
       <DependentUpon>FormFlights.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,8 +140,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FormPlane.resx">
+      <DependentUpon>FormPlane.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

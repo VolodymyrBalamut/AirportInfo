@@ -31,7 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFlights = new System.Windows.Forms.ToolStripMenuItem();
-            this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemConf = new System.Windows.Forms.ToolStripMenuItem();
+            this.довідникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCountry = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCity = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemAirport = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemPlane = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -39,6 +44,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolStripMenuItemCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -51,7 +57,8 @@
             // 
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFlights,
-            this.налаштуванняToolStripMenuItem});
+            this.toolStripMenuItemConf,
+            this.довідникиToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(1001, 24);
@@ -66,11 +73,52 @@
             this.toolStripMenuItemFlights.Text = "Розклад рейсів";
             this.toolStripMenuItemFlights.Click += new System.EventHandler(this.toolStripMenuItemFlights_Click);
             // 
-            // налаштуванняToolStripMenuItem
+            // toolStripMenuItemConf
             // 
-            this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
-            this.налаштуванняToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.налаштуванняToolStripMenuItem.Text = "Налаштування";
+            this.toolStripMenuItemConf.Name = "toolStripMenuItemConf";
+            this.toolStripMenuItemConf.Size = new System.Drawing.Size(101, 20);
+            this.toolStripMenuItemConf.Text = "Налаштування";
+            this.toolStripMenuItemConf.Click += new System.EventHandler(this.toolStripMenuItemConf_Click);
+            // 
+            // довідникиToolStripMenuItem
+            // 
+            this.довідникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemCountry,
+            this.toolStripMenuItemCity,
+            this.toolStripMenuItemAirport,
+            this.toolStripMenuItemPlane,
+            this.toolStripMenuItemCompany});
+            this.довідникиToolStripMenuItem.Name = "довідникиToolStripMenuItem";
+            this.довідникиToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.довідникиToolStripMenuItem.Text = "Довідники";
+            // 
+            // toolStripMenuItemCountry
+            // 
+            this.toolStripMenuItemCountry.Name = "toolStripMenuItemCountry";
+            this.toolStripMenuItemCountry.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemCountry.Text = "Країни";
+            this.toolStripMenuItemCountry.Click += new System.EventHandler(this.toolStripMenuItemCountry_Click);
+            // 
+            // toolStripMenuItemCity
+            // 
+            this.toolStripMenuItemCity.Name = "toolStripMenuItemCity";
+            this.toolStripMenuItemCity.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemCity.Text = "Міста";
+            this.toolStripMenuItemCity.Click += new System.EventHandler(this.toolStripMenuItemCity_Click);
+            // 
+            // toolStripMenuItemAirport
+            // 
+            this.toolStripMenuItemAirport.Name = "toolStripMenuItemAirport";
+            this.toolStripMenuItemAirport.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemAirport.Text = "Аеоропорти";
+            this.toolStripMenuItemAirport.Click += new System.EventHandler(this.toolStripMenuItemAirport_Click);
+            // 
+            // toolStripMenuItemPlane
+            // 
+            this.toolStripMenuItemPlane.Name = "toolStripMenuItemPlane";
+            this.toolStripMenuItemPlane.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemPlane.Text = "Літаки";
+            this.toolStripMenuItemPlane.Click += new System.EventHandler(this.toolStripMenuItemPlane_Click);
             // 
             // dgv
             // 
@@ -145,6 +193,13 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Дата";
             // 
+            // toolStripMenuItemCompany
+            // 
+            this.toolStripMenuItemCompany.Name = "toolStripMenuItemCompany";
+            this.toolStripMenuItemCompany.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemCompany.Text = "Перевізники";
+            this.toolStripMenuItemCompany.Click += new System.EventHandler(this.toolStripMenuItemCompany_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +215,7 @@
             this.MainMenuStrip = this.MainMenu;
             this.Name = "FormMain";
             this.Text = "Головна форма";
+            this.Activated += new System.EventHandler(this.FormMain_Activated);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
@@ -177,7 +233,7 @@
 
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFlights;
-        private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemConf;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.TabControl tabControl1;
@@ -185,5 +241,11 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem довідникиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCountry;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCity;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAirport;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemPlane;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCompany;
     }
 }

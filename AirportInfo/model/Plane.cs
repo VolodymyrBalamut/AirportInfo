@@ -69,5 +69,24 @@ namespace AirportInfo.model
         {
             return PlaneCode;
         }
+
+        public static void Refresh()
+        {
+            try
+            {
+                conn.Open();
+                string query = @"exec spLoadPlane";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

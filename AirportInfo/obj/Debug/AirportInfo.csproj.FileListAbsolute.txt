@@ -1,10 +1,17 @@
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportInfo.exe.config
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportInfo.exe
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportInfo.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormConfig.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.FormFlights.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.Properties.Resources.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormMain.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.csproj.GenerateResource.Cache
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.exe
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormLogin.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.csprojResolveAssemblyReference.cache
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormCountry.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormCity.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormAirport.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormPlane.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormCompany.resources
