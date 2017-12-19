@@ -69,6 +69,16 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AirportData\AirportData.csproj">
+      <Project>{a6a60a13-509f-4da1-92bd-81666ef73a1c}</Project>
+      <Name>AirportData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AirportInfo\AirportInfo.csproj">
+      <Project>{9cd18cd7-d117-44bf-9bf5-78514f6931a7}</Project>
+      <Name>AirportInfo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

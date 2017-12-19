@@ -13,3 +13,8 @@ D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\obj\Debug\AirportInfo.MyTest.csprojResolveAssemblyReference.cache
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\obj\Debug\AirportInfo.MyTest.dll
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\obj\Debug\AirportInfo.MyTest.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\AirportData.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\AirportInfo.exe
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\AirportData.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\AirportInfo.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\AirportInfo.exe.config

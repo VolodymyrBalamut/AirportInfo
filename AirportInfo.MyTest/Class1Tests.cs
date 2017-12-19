@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using AirportData;
+using Xunit;
 
 namespace AirportInfo.MyTest
 {
@@ -7,18 +8,8 @@ namespace AirportInfo.MyTest
         [Fact]
         public void PassingTest()
         {
-            Assert.Equal(4, Add(2, 2));
-        }
-
-        [Fact]
-        public void FailingTest()
-        {
-            Assert.Equal(5, Add(2, 2));
-        }
-
-        int Add(int x, int y)
-        {
-            return x + y;
+            Plane plane = new Plane();
+            Assert.Equal(plane.GetAll(), false);
         }
     }
 }
