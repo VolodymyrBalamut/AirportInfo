@@ -10,5 +10,4 @@ coverage:
 ignore:
   - AirportInfo.Tests/.*
   - DB/.*
-  - Hospital/Global.asax.cs
   - packeges/.*
