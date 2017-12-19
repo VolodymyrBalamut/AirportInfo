@@ -6,68 +6,242 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="1" author="volodymyr">
-        <createTable tableName="tbAirport">
-            <column name="AirportCode" type="char(3)">
-                <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_airport"/>
-            </column>
-            <column name="AirportName" type="nvarchar(100)">
-                <constraints nullable="false"/>
-            </column>
-			<column name="CountryCode" type="char(2)">
-                <constraints nullable="false"/>
-            </column>
-			<column name="CityName" type="nvarchar(50)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-        <rollback>
-            <dropTable tableName="tbAirport"/>
-        </rollback>
-    </changeSet>
+  <changeSet id="1" author="volodymyr">
+    <createTable tableName="tbAirport">
+      <column name="AirportCode" type="char(3)">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_airport"/>
+      </column>
+      <column name="AirportName" type="nvarchar(100)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CountryCode" type="char(2)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CityName" type="nvarchar(50)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbAirport"/>
+    </rollback>
+  </changeSet>
 
-   <changeSet id="2" author="volodymyr">
-        <createTable tableName="tbCity">
-            <column name="CountryCode" type="char(2)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="CityName" type="nvarchar(50)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-		<addPrimaryKey 
-            columnNames="CountryCode, CityName"
-            constraintName="pk_city"
-            tableName="tbCity"/>
-        <rollback>
-            <dropTable tableName="tbCity"/>
-        </rollback>
+  <changeSet id="2" author="volodymyr">
+    <createTable tableName="tbCity">
+      <column name="CountryCode" type="char(2)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CityName" type="nvarchar(50)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <addPrimaryKey
+       columnNames="CountryCode, CityName"
+       constraintName="pk_city"
+       tableName="tbCity"/>
+    <rollback>
+      <dropTable tableName="tbCity"/>
+    </rollback>
+  </changeSet>
 
-    </changeSet>
-	<changeSet id="3" author="volodymyr">
-        <createTable tableName="tbCountry">
-            <column name="CountryCode" type="char(2)">
-                <constraints primaryKey="true" nullable="false" primaryKeyName ="pk_country" />
-            </column>
-             <column name="CountryName" type="nvarchar(50)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-        <rollback>
-            <dropTable tableName="tbCountry"/>
-        </rollback>
+  <changeSet id="3" author="volodymyr">
+    <createTable tableName="tbCountry">
+      <column name="CountryCode" type="char(2)">
+        <constraints primaryKey="true" nullable="false" primaryKeyName ="pk_country" />
+      </column>
+      <column name="CountryName" type="nvarchar(50)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbCountry"/>
+    </rollback>
+  </changeSet>
 
-    </changeSet>
+  <changeSet id="4" author="volodymyr">
+    <createTable tableName="tbStatusFlight">
+      <column name="StatusFlight" type="nvarchar(20)">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_statusflight"/>
+      </column>
+      <column name="Description" type="nvarchar(50)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbStatusFlight"/>
+    </rollback>
+  </changeSet>
 
-<changeSet author="volodymyr" id="4">
-			<addForeignKeyConstraint baseColumnNames="CountryCode"
-            baseTableName="tbCity"
-            constraintName="FK_CityCountry"
-            referencedColumnNames="CountryCode"
-            referencedTableName="tbCountry"/>
-			<rollback>
-				<dropForeignKeyConstraint baseTableName="tbCity" 
-				constraintName="FK_CityCountry"/>
-			</rollback>
-</changeSet>
+  <changeSet id="5" author="volodymyr">
+    <createTable tableName="tbTerminal">
+      <column name="TerminalCode" type="nvarchar(3)">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_terminal"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbTerminal"/>
+    </rollback>
+  </changeSet>
+
+  <changeSet id="6" author="volodymyr">
+    <createTable tableName="tbPlane">
+      <column name="PlaneCode" type="nvarchar(10)">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_plane"/>
+      </column>
+      <column name="PlaneName" type="nvarchar(50)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="Speed" type="nvarchar(20)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="Distance" type="nvarchar(20)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="Seats" type="int">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbPlane"/>
+    </rollback>
+  </changeSet>
+
+  <changeSet id="7" author="volodymyr">
+    <createTable tableName="tbFlight">
+      <column name="FlightCode" type="nvarchar(5)">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_flight"/>
+      </column>
+      <column name="DepartTime" type="nvarchar(5)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="ArriveTime" type="nvarchar(5)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="DepartAirportCode" type="char(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="ArriveAirportCode" type="char(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CompanyCode" type="nvarchar(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="PlaneCode" type="nvarchar(10)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="WeekDay" type="nvarchar(7)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbFlight"/>
+    </rollback>
+  </changeSet>
+
+  <changeSet id="8" author="volodymyr">
+    <createTable tableName="tbActualFlight">
+      <column name="ActualFlightID" type="int" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_actualflight"/>
+      </column>
+      <column name="FlightCode" type="nvarchar(5)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="ActualFlightDate" type="date">
+        <constraints nullable="false"/>
+      </column>
+      <column name="PlaneCode" type="nvarchar(10)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="StatusFlight" type="nvarchar(20)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="TerminalCode" type="nvarchar(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="TimeDifference" type="int">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbActualFlight"/>
+    </rollback>
+  </changeSet>
+
+  <changeSet id="9" author="volodymyr">
+    <createTable tableName="tbActualFlightHistory">
+      <column name="ActualFlightHistoryID" type="int" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_actualflighthistory"/>
+      </column>
+      <column name="OldStatus" type="nvarchar(20)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="NewStatus" type="nvarchar(20)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="DateChange" type="datetime">
+        <constraints nullable="false"/>
+      </column>
+      <column name="ActualFlightID" type="int">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbActualFlightHistory"/>
+    </rollback>
+  </changeSet>
+
+  <changeSet id="10" author="volodymyr">
+    <createTable tableName="tbUser">
+      <column name="UserID" type="int" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_user"/>
+      </column>
+      <column name="Login" type="nvarchar(50)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="Password" type="nvarchar(20)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="UserRoleName" type="nvarchar(10)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbUser"/>
+    </rollback>
+  </changeSet>
+
+  <changeSet id="11" author="volodymyr">
+    <createTable tableName="tbUserRole">
+      <column name="UserRoleName" type="nvarchar(10)">
+        <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_userrole"/>
+      </column>
+      <column name="UserRoleDesc" type="nvarchar(100)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbUserRole"/>
+    </rollback>
+  </changeSet>
+
+  <changeSet id="12" author="volodymyr">
+    <createTable tableName="tbCompany">
+      <column name="CompanyCode" type="nvarchar(3) ">
+        <constraints primaryKey="true" nullable="false" primaryKeyName ="pk_company" />
+      </column>
+      <column name="CompanyName" type="nvarchar(70)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CountryCode" type="char(2)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="Callsign" type="nvarchar(50)">
+        <constraints nullable="false"/>
+      </column>
+
+    </createTable>
+    <rollback>
+      <dropTable tableName="tbCompany"/>
+    </rollback>
+  </changeSet>
 </databaseChangeLog>

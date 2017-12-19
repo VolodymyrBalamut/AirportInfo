@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="21" author="volodymyr">
+
+    <addForeignKeyConstraint
+     baseColumnNames="DepartAirportCode"
+     baseTableName="tbFlight"
+     constraintName="FK_FlightDepartAirport"
+     referencedColumnNames="AirportCode"
+     referencedTableName="tbAirport"/>
+
+    <addForeignKeyConstraint
+    baseColumnNames="ArriveAirportCode"
+    baseTableName="tbFlight"
+    constraintName="FK_FlightArriveAirport"
+    referencedColumnNames="AirportCode"
+    referencedTableName="tbAirport"/>
+
+    <addForeignKeyConstraint baseColumnNames="CompanyCode"
+    baseTableName="tbFlight"
+    constraintName="FK_FlightCompany"
+    referencedColumnNames="CompanyCode"
+    referencedTableName="tbCompany"/>
+
+    <addForeignKeyConstraint baseColumnNames="PlaneCode"
+     baseTableName="tbFlight"
+     constraintName="FK_FlightPlane"
+     referencedColumnNames="PlaneCode"
+     referencedTableName="tbPlane"/>
+
+    <rollback>
+      <dropAllForeignKeyConstraints baseTableName="tbFlight"/>
+    </rollback>
+
+  </changeSet>
+
+  <changeSet id="22" author="volodymyr">
+    <addForeignKeyConstraint
+     baseColumnNames="CountryCode,CityName"
+     baseTableName="tbAirport"
+     constraintName="FK_AirportCity"
+     referencedColumnNames="CountryCode,CityName"
+     referencedTableName="tbCity"/>
+
+    <rollback>
+      <dropAllForeignKeyConstraints baseTableName="tbAirport"/>
+    </rollback>
+
+  </changeSet>
+
+  <changeSet id="23" author="volodymyr">
+    <addForeignKeyConstraint
+     baseColumnNames="CountryCode"
+     baseTableName="tbCity"
+     constraintName="FK_CityCountry"
+     referencedColumnNames="CountryCode"
+     referencedTableName="tbCountry"/>
+
+    <addForeignKeyConstraint
+    baseColumnNames="CountryCode"
+    baseTableName="tbCompany"
+    constraintName="FK_CompanyCountry"
+    referencedColumnNames="CountryCode"
+    referencedTableName="tbCountry"/>
+
+    <rollback>
+      <dropAllForeignKeyConstraints baseTableName="tbCity"/>
+      <dropAllForeignKeyConstraints baseTableName="tbCompany"/>
+    </rollback>
+
+  </changeSet>
+
+  <changeSet id="24" author="volodymyr">
+
+    <addForeignKeyConstraint
+     baseColumnNames="FlightCode"
+     baseTableName="tbActualFlight"
+     constraintName="FK_ActualFlightFlight"
+     referencedColumnNames="FlightCode"
+     referencedTableName="tbFlight"/>
+
+    <addForeignKeyConstraint
+    baseColumnNames="PlaneCode"
+    baseTableName="tbActualFlight"
+    constraintName="FK_ActualFlightPlane"
+    referencedColumnNames="PlaneCode"
+    referencedTableName="tbPlane"/>
+
+    <addForeignKeyConstraint
+    baseColumnNames="TerminalCode"
+    baseTableName="tbActualFlight"
+    constraintName="FK_ActualFlightTerminal"
+    referencedColumnNames="TerminalCode"
+    referencedTableName="tbTerminal"/>
+
+    <addForeignKeyConstraint
+    baseColumnNames="StatusFlight"
+    baseTableName="tbActualFlight"
+    constraintName="FK_ActualFlightStatusFlight"
+    referencedColumnNames="StatusFlight"
+    referencedTableName="tbStatusFlight"/>
+
+    <rollback>
+      <dropAllForeignKeyConstraints baseTableName="tbActualFlight"/>
+    </rollback>
+
+  </changeSet>
+
+  <changeSet id="25" author="volodymyr">
+    <addForeignKeyConstraint
+     baseColumnNames="UserRoleName"
+     baseTableName="tbUser"
+     constraintName="FK_UserRole"
+     referencedColumnNames="UserRoleName"
+     referencedTableName="tbUserRole"/>
+    <rollback>
+      <dropAllForeignKeyConstraints baseTableName="tbUser"/>
+    </rollback>
+  </changeSet>
+
+</databaseChangeLog>
