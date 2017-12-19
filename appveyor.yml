@@ -1,7 +1,6 @@
 configuration: Release
 
 before_build:
-  - dotnet restore
   - nuget restore
  
  
@@ -18,10 +17,8 @@ artifacts:
   - path: AirportData\bin\Debug\AirportData.dll
     name: AirportData.dll
 
-build_script:
- - msbuild /verbosity:quiet "AirportInfo"
 test_script:
- - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:"AirportInfo.MyTest.dll -noshadow" -output:"coverage.xml"
+ - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\AirportInfo.MyTes\bin\Debug\AirportInfo.MyTest.dll -noshadow" -filter:"+[AirportInfo*]* -[AirportInfo.MyTest.dll*]*" -output:".\coverage.xml"
 after_test:
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
