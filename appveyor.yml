@@ -1,8 +1,10 @@
 configuration: Release
 
 before_build:
+  - dotnet restore
   - nuget restore
-  
+ 
+ 
 build:
   project: AirportInfo.sln
   verbosity: minimal
@@ -10,4 +12,8 @@ build:
 
 test:
   assemblies:
-    AirportInfo.Tests.dll
+    AirportInfo.MyTest.dll
+
+artifacts:
+  - path: AirportData\bin\Debug\AirportData.dll
+    name: AirportData.dll
