@@ -18,5 +18,5 @@ artifacts:
     name: AirportData.dll
 
 test_script:
- - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\AirportInfo.MyTest\bin\Debug\AirportInfo.MyTest.dll -noshadow" -filter:"+[AirportData*]*" -output:".\coverage.xml"
+ - .\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\AirportInfo.MyTest\bin\Debug\AirportInfo.MyTest.dll -noshadow" -filter:"+[AirportData*]* + [AirportInfo.view*]*" -output:".\coverage.xml"
  - .\packages\Codecov.1.0.3\tools\codecov.exe -f "coverage.xml"
