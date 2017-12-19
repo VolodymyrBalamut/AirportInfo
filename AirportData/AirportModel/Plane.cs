@@ -290,5 +290,10 @@ namespace AirportData
                 }
             }
         }
+
+        public String getPlaneName()
+        {
+            return this.PlaneName;
+        }
     }
 }
