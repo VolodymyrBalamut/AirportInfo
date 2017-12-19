@@ -7,12 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportInfo", "AirportInfo\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E879866-465E-4258-BAB2-4A42290CE00B}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		codecov.yml = codecov.yml
+		databaseChangeLog.xml = databaseChangeLog.xml
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportData", "AirportData\AirportData.csproj", "{A6A60A13-509F-4DA1-92BD-81666EF73A1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportInfo.Tests", "AirportInfo.Tests\AirportInfo.Tests.csproj", "{709DA499-837B-4E5B-94D9-76AFDE3BE5D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C1F28FFA-6E86-44B0-BEF9-C6365C38CA57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirportInfo.MyTest", "AirportInfo.MyTest\AirportInfo.MyTest.csproj", "{E3CD19C3-E815-497A-A560-17F0BDB94A2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,8 +39,15 @@ Global
 		{709DA499-837B-4E5B-94D9-76AFDE3BE5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{709DA499-837B-4E5B-94D9-76AFDE3BE5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{709DA499-837B-4E5B-94D9-76AFDE3BE5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3CD19C3-E815-497A-A560-17F0BDB94A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3CD19C3-E815-497A-A560-17F0BDB94A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3CD19C3-E815-497A-A560-17F0BDB94A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3CD19C3-E815-497A-A560-17F0BDB94A2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3CD19C3-E815-497A-A560-17F0BDB94A2D} = {C1F28FFA-6E86-44B0-BEF9-C6365C38CA57}
 	EndGlobalSection
 EndGlobal

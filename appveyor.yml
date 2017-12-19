@@ -1,0 +1,13 @@
+configuration: Release
+
+before_build:
+  - nuget restore
+  
+build:
+  project: AirportInfo.sln
+  verbosity: minimal
+  publish_wap: true
+
+test:
+  assemblies:
+    AirportInfo.Tests.dll

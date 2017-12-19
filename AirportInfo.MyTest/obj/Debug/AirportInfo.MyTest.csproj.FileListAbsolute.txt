@@ -1,0 +1,15 @@
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.abstractions.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.runner.reporters.net452.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.runner.utility.net452.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\AirportInfo.MyTest.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\AirportInfo.MyTest.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.assert.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.core.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.execution.desktop.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.assert.xml
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.core.xml
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\bin\Debug\xunit.execution.desktop.xml
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\obj\Debug\AirportInfo.MyTest.csprojResolveAssemblyReference.cache
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\obj\Debug\AirportInfo.MyTest.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo.MyTest\obj\Debug\AirportInfo.MyTest.pdb

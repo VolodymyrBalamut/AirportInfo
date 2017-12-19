@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="volodymyr">
+        <createTable tableName="tbAirport">
+            <column name="AirportCode" type="char(3)">
+                <constraints primaryKey="true" nullable="false"  primaryKeyName ="pk_airport"/>
+            </column>
+            <column name="AirportName" type="nvarchar(100)">
+                <constraints nullable="false"/>
+            </column>
+			<column name="CountryCode" type="char(2)">
+                <constraints nullable="false"/>
+            </column>
+			<column name="CityName" type="nvarchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="tbAirport"/>
+        </rollback>
+    </changeSet>
+
+   <changeSet id="2" author="volodymyr">
+        <createTable tableName="tbCity">
+            <column name="CountryCode" type="char(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CityName" type="nvarchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+		<addPrimaryKey 
+            columnNames="CountryCode, CityName"
+            constraintName="pk_city"
+            tableName="tbCity"/>
+        <rollback>
+            <dropTable tableName="tbCity"/>
+        </rollback>
+
+    </changeSet>
+	<changeSet id="3" author="volodymyr">
+        <createTable tableName="tbCountry">
+            <column name="CountryCode" type="char(2)">
+                <constraints primaryKey="true" nullable="false" primaryKeyName ="pk_country" />
+            </column>
+             <column name="CountryName" type="nvarchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="tbCountry"/>
+        </rollback>
+
+    </changeSet>
+
+<changeSet author="volodymyr" id="4">
+			<addForeignKeyConstraint baseColumnNames="CountryCode"
+            baseTableName="tbCity"
+            constraintName="FK_CityCountry"
+            referencedColumnNames="CountryCode"
+            referencedTableName="tbCountry"/>
+			<rollback>
+				<dropForeignKeyConstraint baseTableName="tbCity" 
+				constraintName="FK_CityCountry"/>
+			</rollback>
+</changeSet>
+</databaseChangeLog>
