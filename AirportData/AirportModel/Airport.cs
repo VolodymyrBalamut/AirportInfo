@@ -36,7 +36,7 @@ namespace AirportData
                 // prepare command string
                 string query = @"
                  delete from tbAirport
-                 where AirportCode = @FlightCode";
+                 where AirportCode = @AirportCode";
                 SqlParameter param1 = new SqlParameter();
                 param1.ParameterName = "@AirportCode";
                 param1.Value = this.AirportCode;
@@ -102,8 +102,8 @@ namespace AirportData
             {
                 conn.Open();
                 string query = @"insert into tbAirport
-                            (AirportCode,AirportName,CityName)
-                            values (@AirportCode,@AirportName,@CityName)";
+                            (AirportCode,AirportName,CityName,CountryCode)
+                            values (@AirportCode,@AirportName,@CityName,@CountryCode)";
                 // 2. define parameters used in command object
                 SqlParameter param1 = new SqlParameter();
                 param1.ParameterName = "@AirportCode";
@@ -114,10 +114,14 @@ namespace AirportData
                 SqlParameter param3 = new SqlParameter();
                 param3.ParameterName = "@CityName";
                 param3.Value = this.CityName;
+                SqlParameter param4 = new SqlParameter();
+                param4.ParameterName = "@CountryCode";
+                param4.Value = this.CountryCode;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(param1);
                 cmd.Parameters.Add(param2);
                 cmd.Parameters.Add(param3);
+                cmd.Parameters.Add(param4);
                 cmd.ExecuteNonQuery();
                 success = true;
             }
@@ -157,11 +161,15 @@ namespace AirportData
                 SqlParameter param3 = new SqlParameter();
                 param3.ParameterName = "@CityName";
                 param3.Value = this.CityName;
+                SqlParameter param4 = new SqlParameter();
+                param4.ParameterName = "@AirportCode";
+                param4.Value = this.AirportCode;
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(param1);
                 cmd.Parameters.Add(param2);
                 cmd.Parameters.Add(param3);
+                cmd.Parameters.Add(param4);
                 // 3. Call ExecuteNonQuery to send command
                 cmd.ExecuteNonQuery();
                 success = true;

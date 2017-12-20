@@ -57,8 +57,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AACreateTables.cs" />
+    <Compile Include="AirportTests.cs" />
+    <Compile Include="CountryTests.cs" />
     <Compile Include="PlaneTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TerminalTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

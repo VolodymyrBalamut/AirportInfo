@@ -8,7 +8,8 @@ build:
   project: AirportInfo.sln
   verbosity: minimal
   publish_wap: true
-
+services:
+  - mssql2014
 test:
   assemblies:
     AirportInfo.MyTest.dll

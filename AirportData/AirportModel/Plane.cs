@@ -222,7 +222,7 @@ namespace AirportData
                 conn.Open();
                 // prepare command string
                 string query = @"
-                update tbAirport
+                update tbPlane
                 set PlaneName = @PlaneName,
                     Speed = @Speed,
                     Distance = @Distance,

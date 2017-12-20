@@ -18,3 +18,4 @@ D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.v
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportData.dll
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportData.pdb
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormActualFlightConf.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportData.dll.config

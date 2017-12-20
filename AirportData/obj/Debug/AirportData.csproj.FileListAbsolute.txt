@@ -3,3 +3,13 @@ D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\AirportData.p
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\obj\Debug\AirportData.csprojResolveAssemblyReference.cache
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\obj\Debug\AirportData.dll
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\obj\Debug\AirportData.pdb
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\AirportData.dll.config
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\EntityFramework.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\EntityFramework.SqlServer.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\System.Data.SQLite.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\EntityFramework.xml
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\EntityFramework.SqlServer.xml
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\System.Data.SQLite.xml
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportData\bin\Debug\System.Data.SQLite.dll.config

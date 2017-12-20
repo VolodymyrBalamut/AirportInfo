@@ -127,7 +127,7 @@ namespace AirportData
                 conn.Open();
                 // prepare command string
                 string query = @"
-                update tbAirport
+                update tbCountry
                 set CountryName = @CountryName
                 where CountryCode = @CountryCode";
 
