@@ -11,6 +11,7 @@ namespace AirportInfo.MyTest
         {
             Terminal.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
             //Terminal.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
+            CreateTables.createTables();
         }
         [Fact]
         public void DeleteTest()

@@ -23,28 +23,10 @@ namespace AirportInfo.MyTest
                 Plane.conn.Open();
 
                 // prepare command string
-                string query = @"create table tbTerminal(
-	                                TerminalCode nvarchar(3) PRIMARY KEY)
-                                create table tbCountry(
-	                                    CountryCode char(2) PRIMARY KEY,
-	                                    CountryName nvarchar(50) 
-                                    )
-                                create table tbPlane(
-	                                    PlaneCode nvarchar(10) PRIMARY KEY,
-	                                    PlaneName nvarchar(50),
-	                                    Speed nvarchar(20),
-	                                    Distance nvarchar(20),
-	                                    Seats int
-                                    )
-                                create table tbAirport(
-	                                    AirportCode char(3) PRIMARY KEY,
-	                                    AirportName nvarchar(100) not null,
-	                                    CountryCode char(2) not null,
-	                                    CityName nvarchar(50) not null,
-                                    )";
+                //string query = @"";
                 // 1. Instantiate a new command
-                SqlCommand cmd = new SqlCommand(query, Plane.conn);
-                cmd.ExecuteNonQuery();
+                //SqlCommand cmd = new SqlCommand(query, Plane.conn);
+               // cmd.ExecuteNonQuery();
                 flag = true;
             }
             finally

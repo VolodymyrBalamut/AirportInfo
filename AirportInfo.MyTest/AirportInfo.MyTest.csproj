@@ -60,6 +60,7 @@
     <Compile Include="AACreateTables.cs" />
     <Compile Include="AirportTests.cs" />
     <Compile Include="CountryTests.cs" />
+    <Compile Include="CreateTables.cs" />
     <Compile Include="CustomTestCaseOrderer .cs" />
     <Compile Include="CustomTestCollectionOrderer .cs" />
     <Compile Include="OrderAttribute.cs" />
