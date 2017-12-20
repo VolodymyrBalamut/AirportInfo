@@ -14,8 +14,8 @@ namespace AirportInfo.MyTest
     {
         public AirportTests()
         {
-            //Airport.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
-            Airport.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
+            Airport.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
+           // Airport.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
         }
         [Fact, Order(4)]
         public void DeleteTest()
