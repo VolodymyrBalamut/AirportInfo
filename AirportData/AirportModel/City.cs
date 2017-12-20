@@ -45,6 +45,7 @@ namespace AirportData
                 // 1. Instantiate a new command
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(param1);
+                cmd.Parameters.Add(param2);
                 cmd.ExecuteNonQuery();
                 success = true;
             }

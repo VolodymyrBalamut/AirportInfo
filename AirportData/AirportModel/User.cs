@@ -14,6 +14,13 @@ namespace AirportData
         public string Password;
         public string UserRoleName;
 
+        public User() { }
+        public User(string Login, string Password, string UserRoleName)
+        {
+            this.Login = Login;
+            this.Password = Password;
+            this.UserRoleName = UserRoleName;
+        }
         public static User getUser(string Login,string Password)
         {
             User user = new User();

@@ -62,9 +62,11 @@
     <Compile Include="CompanyTests.cs" />
     <Compile Include="CountryTests.cs" />
     <Compile Include="CreateTables.cs" />
+    <Compile Include="FlightTests.cs" />
     <Compile Include="PlaneTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TerminalTests.cs" />
+    <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

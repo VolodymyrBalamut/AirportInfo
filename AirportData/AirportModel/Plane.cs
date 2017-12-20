@@ -98,6 +98,8 @@ namespace AirportData
             }
         }
 
+        public Plane() { }
+        public Plane(string PlaneCode, string PlaneName,string Speed, string Distance, string Seats) { }
         public override bool Delete()
         {
             bool success = false;
