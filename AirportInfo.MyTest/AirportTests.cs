@@ -10,7 +10,7 @@ namespace AirportInfo.MyTest
 {
     public class AirportTests
     {
-        [Fact]
+        [Fact, Order(4)]
         public void DeleteTest()
         {
             Airport temp = new Airport();
@@ -19,21 +19,21 @@ namespace AirportInfo.MyTest
             Assert.True(temp.Delete());
         }
 
-        [Fact]
+        [Fact, Order(3)]
         public void GetAllTest()
         {
             //Assert.Equal(new Terminal().GetAll(), true);
             Assert.True(new Airport().GetAll());
         }
 
-        [Fact]
+        [Fact, Order(1)]
         public void InsertTest()
         {
             Airport temp = new Airport("jjj","ff","UA","Kiev");
             Assert.True(temp.Insert());
         }
 
-        [Fact]
+        [Fact, Order(2)]
         public void UpdateTest()
         {
             Airport temp = new Airport("jjj", "fdf", "UA", "Kiev");

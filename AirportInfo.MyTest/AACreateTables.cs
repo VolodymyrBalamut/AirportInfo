@@ -4,6 +4,7 @@ using Xunit;
 
 namespace AirportInfo.MyTest
 {
+    [Order(1)]
     public class AACreateTables
     {
         public AACreateTables()
