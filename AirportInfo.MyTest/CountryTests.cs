@@ -4,7 +4,6 @@ using Xunit;
 
 namespace AirportInfo.MyTest
 {
-    [Order(3)]
     public class CountryTests
     {
         public CountryTests()

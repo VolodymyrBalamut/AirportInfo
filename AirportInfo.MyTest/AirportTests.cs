@@ -9,7 +9,6 @@ using Xunit;
 
 namespace AirportInfo.MyTest
 {
-    [Order(5)]
     public class AirportTests
     {
         public AirportTests()
@@ -18,7 +17,7 @@ namespace AirportInfo.MyTest
             // Airport.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
             CreateTables.createTables();
         }
-        [Fact, Order(4)]
+        [Fact]
         public void DeleteTest()
         {
             Airport temp = new Airport();
@@ -27,21 +26,21 @@ namespace AirportInfo.MyTest
             Assert.True(temp.Delete());
         }
 
-        [Fact, Order(3)]
+        [Fact]
         public void GetAllTest()
         {
             //Assert.Equal(new Terminal().GetAll(), true);
             Assert.True(new Airport().GetAll());
         }
 
-        [Fact, Order(1)]
+        [Fact]
         public void InsertTest()
         {
             Airport temp = new Airport("jjj","ff","UA","Kiev");
             Assert.True(temp.Insert());
         }
 
-        [Fact, Order(2)]
+        [Fact]
         public void UpdateTest()
         {
             Airport temp = new Airport("jjj", "fdf", "UA", "Kiev");
