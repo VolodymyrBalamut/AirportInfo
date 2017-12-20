@@ -10,11 +10,75 @@ namespace AirportData
     public class ActualFlight : Base<ActualFlight,int>
     {
         public int ActualFlightID;
-        public string FlightCode;
+        private string flightCode;
+        public Flight Flight
+        {
+            get
+            {
+                if (flightCode == "")
+                    return null;
+                return Flight.Items[flightCode];
+            }
+            set
+            {
+                if (value == null)
+                    flightCode = "";
+                else
+                    flightCode = value.FlightCode;
+            }
+        }
         public DateTime ActualFlightDate;
-        public string PlaneCode;
-        public string StatusFlight;
-        public string TerminalCode;
+        private string planeCode;
+        public Plane Plane
+        {
+            get
+            {
+                if (planeCode == "")
+                    return null;
+                return Plane.Items[planeCode];
+            }
+            set
+            {
+                if (value == null)
+                    planeCode = "";
+                else
+                    planeCode = value.PlaneCode;
+            }
+        }
+        private string statusFlight;
+        public StatusFlight StatusFlight
+        {
+            get
+            {
+                if (statusFlight == "")
+                    return null;
+                return StatusFlight.Items[statusFlight];
+            }
+            set
+            {
+                if (value == null)
+                    statusFlight = "";
+                else
+                    statusFlight = value.StatusFlightName;
+            }
+        }
+        private string terminalCode;
+        public Terminal Terminal
+        {
+            get
+            {
+                if (terminalCode == "")
+                    return null;
+                return Terminal.Items[terminalCode];
+            }
+            set
+            {
+                if (value == null)
+                    terminalCode = "";
+                else
+                    terminalCode = value.TerminalCode;
+            }
+        }
         public int TimeDifference;
 
         public override bool Delete()
@@ -67,11 +131,11 @@ namespace AirportData
                 {
                     ActualFlight temp = new ActualFlight();
                     temp.ActualFlightID = Convert.ToInt32(rdr[0]);
-                    temp.FlightCode = rdr[1].ToString();
+                    temp.flightCode = rdr[1].ToString();
                     try { temp.ActualFlightDate = (DateTime)rdr[2]; } catch { }
-                    temp.PlaneCode = rdr[3].ToString();
-                    temp.StatusFlight = rdr[4].ToString();
-                    temp.TerminalCode = rdr[5].ToString();
+                    temp.planeCode = rdr[3].ToString();
+                    temp.statusFlight = rdr[4].ToString();
+                    temp.terminalCode = rdr[5].ToString();
                     temp.TimeDifference = Convert.ToInt32(rdr[6]);
                     //словник об'єктів
                     Items.Add(temp.ActualFlightID, temp);
@@ -102,19 +166,19 @@ namespace AirportData
                 // 2. define parameters used in command object
                 SqlParameter param1 = new SqlParameter();
                 param1.ParameterName = "@FlightCode";
-                param1.Value = this.FlightCode;
+                param1.Value = this.flightCode;
                 SqlParameter param2 = new SqlParameter();
                 param2.ParameterName = "@ActualFlightDate";
                 param2.Value = this.ActualFlightDate;
                 SqlParameter param3 = new SqlParameter();
                 param3.ParameterName = "@PlaneCode";
-                param3.Value = this.PlaneCode;
+                param3.Value = this.planeCode;
                 SqlParameter param4 = new SqlParameter();
                 param4.ParameterName = "@StatusFlight";
-                param4.Value = this.StatusFlight;
+                param4.Value = this.statusFlight;
                 SqlParameter param5 = new SqlParameter();
                 param5.ParameterName = "@TerminalCode";
-                param5.Value = this.TerminalCode;
+                param5.Value = this.terminalCode;
                 SqlParameter param6 = new SqlParameter();
                 param6.ParameterName = "@TimeDifference";
                 param6.Value = this.TimeDifference;
@@ -148,7 +212,7 @@ namespace AirportData
                 conn.Open();
                 // prepare command string
                 string query = @"
-                update tbCompany
+                update tActualFlight
                 set FlightCode = @FlightCode,
                     ActualFlightDate = @ActualFlightDate,
                     PlaneCode = @PlaneCode,
@@ -161,19 +225,19 @@ namespace AirportData
 
                 SqlParameter param1 = new SqlParameter();
                 param1.ParameterName = "@FlightCode";
-                param1.Value = this.FlightCode;
+                param1.Value = this.flightCode;
                 SqlParameter param2 = new SqlParameter();
                 param2.ParameterName = "@ActualFlightDate";
                 param2.Value = this.ActualFlightDate;
                 SqlParameter param3 = new SqlParameter();
                 param3.ParameterName = "@PlaneCode";
-                param3.Value = this.PlaneCode;
+                param3.Value = this.planeCode;
                 SqlParameter param4 = new SqlParameter();
                 param4.ParameterName = "@StatusFlight";
-                param4.Value = this.StatusFlight;
+                param4.Value = this.statusFlight;
                 SqlParameter param5 = new SqlParameter();
                 param5.ParameterName = "@TerminalCode";
-                param5.Value = this.TerminalCode;
+                param5.Value = this.terminalCode;
                 SqlParameter param6 = new SqlParameter();
                 param6.ParameterName = "@TimeDifference";
                 param6.Value = this.TimeDifference;

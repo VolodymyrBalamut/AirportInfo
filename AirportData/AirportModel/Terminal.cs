@@ -7,6 +7,11 @@ namespace AirportData
         public string TerminalCode;
         public string TerminalCodeOld;
 
+        public Terminal() { }
+        public Terminal(string TerminalCode)
+        {
+            this.TerminalCode = TerminalCode;
+        }
         public override bool Delete()
         {
             bool success = false;

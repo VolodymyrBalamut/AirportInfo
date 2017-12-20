@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AirportModel\ActualFlight.cs" />
+    <Compile Include="AirportModel\ActualFlightHistory.cs" />
     <Compile Include="AirportModel\Airport.cs" />
     <Compile Include="AirportModel\Base.cs" />
     <Compile Include="AirportModel\City.cs" />

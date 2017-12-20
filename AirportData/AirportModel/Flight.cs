@@ -311,6 +311,9 @@ namespace AirportData
 
             }
         }
+
+        public Flight() { }
+        public Flight(string FlightCode) { this.FlightCode = FlightCode; }
         public override bool Delete()
         {
             bool success = false;
