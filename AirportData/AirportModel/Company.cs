@@ -13,6 +13,14 @@ namespace AirportData
         public string CompanyName;
         public string CountryCode;
         public string Callsign;
+        public Company() { }
+        public Company(string CompanyCode,string CompanyName, string CountryCode, string Callsign)
+        {
+            this.CompanyCode = CompanyCode;
+            this.CompanyName = CompanyName;
+            this.CountryCode = CountryCode;
+            this.Callsign = Callsign;
+        }
 
         public override bool Delete()
         {

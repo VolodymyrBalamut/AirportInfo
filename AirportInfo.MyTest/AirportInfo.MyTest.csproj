@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AirportTests.cs" />
+    <Compile Include="CityTests.cs" />
+    <Compile Include="CompanyTests.cs" />
     <Compile Include="CountryTests.cs" />
     <Compile Include="CreateTables.cs" />
     <Compile Include="PlaneTests.cs" />

@@ -10,6 +10,9 @@ ALTER TABLE tbActualFlight DROP CONSTRAINT FK_ActualFlightFlight;
 ALTER TABLE tbActualFlight DROP CONSTRAINT FK_ActualFlightPlane;
 ALTER TABLE tbActualFlight DROP CONSTRAINT FK_ActualFlightStatusFlight;
 ALTER TABLE tbUser DROP CONSTRAINT FK_UserRole;
+ALTER TABLE tbActualFlightHistory DROP CONSTRAINT FK_ActualFlightHistory
+ALTER TABLE tbActualFlightHistory DROP CONSTRAINT FK_ActualFlightHistoryOldStatus
+ALTER TABLE tbActualFlightHistory DROP CONSTRAINT FK_ActualFlightHistoryNewStatus
 drop table tbFlight;
 drop table tbActualFlight;
 drop table tbActualFlightHistory;
@@ -137,6 +140,15 @@ FOREIGN KEY (StatusFlight) REFERENCES tbStatusFlight(StatusFlight);
 ALTER TABLE tbUser
 ADD CONSTRAINT FK_UserRole
 FOREIGN KEY (UserRoleName) REFERENCES tbUserRole(UserRoleName);
+ALTER TABLE tbActualFlightHistory
+ADD CONSTRAINT FK_ActualFlightHistory
+FOREIGN KEY (ActualFlightID) REFERENCES tbActualFlight(ActualFlightID);
+ALTER TABLE tbActualFlightHistory
+ADD CONSTRAINT FK_ActualFlightHistoryOldStatus
+FOREIGN KEY (OldStatus) REFERENCES tbStatusFlight(StatusFlight);
+ALTER TABLE tbActualFlightHistory
+ADD CONSTRAINT FK_ActualFlightHistoryNewStatus
+FOREIGN KEY (NewStatus) REFERENCES tbStatusFlight(StatusFlight);
 
 insert into tbUserRole(UserRoleName,UserRoleDesc) values('admin','Адміністратор')
 insert into tbUserRole(UserRoleName,UserRoleDesc) values('operator','Оператор')
