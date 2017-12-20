@@ -4,12 +4,13 @@ using Xunit;
 
 namespace AirportInfo.MyTest
 {
+    [Order(3)]
     public class CountryTests
     {
         public CountryTests()
         {
-            Country.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
-           // Plane.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
+            //Country.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
+            Country.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
         }
         [Fact]
         public void DeleteTest()

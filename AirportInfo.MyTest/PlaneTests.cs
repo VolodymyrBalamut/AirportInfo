@@ -4,21 +4,14 @@ using Xunit;
 
 namespace AirportInfo.MyTest
 {
+    [Order(4)]
     public class PlaneTests
     {
         public PlaneTests()
         {
-            Plane.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
-           // Plane.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
-        }
-
-        [Fact]
-        public void getPlaneName()
-        {
-            Plane plane = new Plane();
-            plane.PlaneName = "A122";
-            Assert.Equal(plane.getPlaneName(), "A122");
-        }
+            //Plane.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
+            Plane.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
+        }  
         [Fact]
         public void DeleteTest()
         {

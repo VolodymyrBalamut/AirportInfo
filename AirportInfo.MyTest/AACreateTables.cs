@@ -9,8 +9,8 @@ namespace AirportInfo.MyTest
     {
         public AACreateTables()
         {
-            Plane.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
-           // User.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
+            //Plane.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
+            Plane.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
         }
 
         [Fact]
@@ -25,18 +25,18 @@ namespace AirportInfo.MyTest
                 // prepare command string
                 string query = @"create table tbTerminal(
 	                                TerminalCode nvarchar(3) PRIMARY KEY)
-                                    create table tbCountry(
+                                create table tbCountry(
 	                                    CountryCode char(2) PRIMARY KEY,
 	                                    CountryName nvarchar(50) 
                                     )
-                                    create table tbPlane(
+                                create table tbPlane(
 	                                    PlaneCode nvarchar(10) PRIMARY KEY,
 	                                    PlaneName nvarchar(50),
 	                                    Speed nvarchar(20),
 	                                    Distance nvarchar(20),
 	                                    Seats int
                                     )
-                                    create table tbAirport(
+                                create table tbAirport(
 	                                    AirportCode char(3) PRIMARY KEY,
 	                                    AirportName nvarchar(100) not null,
 	                                    CountryCode char(2) not null,

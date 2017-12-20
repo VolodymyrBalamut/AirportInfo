@@ -1,6 +1,7 @@
 ﻿using AirportData;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,14 @@ using Xunit;
 
 namespace AirportInfo.MyTest
 {
+    [Order(5)]
     public class AirportTests
     {
+        public AirportTests()
+        {
+            //Airport.conn = new SqlConnection("Server=(local)\\SQL2014;Database=master;User ID=sa;Password=Password12!");
+            Airport.conn = new SqlConnection("Server=(local)\\SQLEXPRESS;Database=master;User ID=sa;Password=1111");
+        }
         [Fact, Order(4)]
         public void DeleteTest()
         {
