@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualFlightHistoryTests.cs" />
     <Compile Include="ActualFlightTests.cs" />
     <Compile Include="AirportTests.cs" />
     <Compile Include="CityTests.cs" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirportData.AirportModel
 {
-    public class ActualFlightHisory : Base<ActualFlightHisory, int>
+    public class ActualFlightHistory : Base<ActualFlightHistory, int>
     {
         public int ActualFlightHistoryID;
         public string OldStatus;
@@ -15,6 +15,14 @@ namespace AirportData.AirportModel
         public DateTime DateChange;
         public int ActualFlightID;
 
+        public ActualFlightHistory() { }
+        public ActualFlightHistory(string OldStatus, string NewStatus, DateTime DateChange, int ActualFlightID)
+        {
+            this.OldStatus = OldStatus;
+            this.NewStatus = NewStatus;
+            this.DateChange = DateChange;
+            this.ActualFlightID = ActualFlightID;
+        }
         public override bool Delete()
         {
             bool success = false;
@@ -63,7 +71,7 @@ namespace AirportData.AirportModel
                 Items.Clear();
                 while (rdr.Read())
                 {
-                    ActualFlightHisory temp = new ActualFlightHisory();
+                    ActualFlightHistory temp = new ActualFlightHistory();
                     temp.ActualFlightHistoryID = Convert.ToInt32(rdr[0]);
                     temp.OldStatus = rdr[1].ToString();
                     temp.NewStatus = rdr[2].ToString();
