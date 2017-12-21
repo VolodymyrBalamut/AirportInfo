@@ -65,6 +65,7 @@
     <Compile Include="AirportModel\Base.cs" />
     <Compile Include="AirportModel\City.cs" />
     <Compile Include="AirportModel\Company.cs" />
+    <Compile Include="AirportModel\Config.cs" />
     <Compile Include="AirportModel\Country.cs" />
     <Compile Include="AirportModel\Flight.cs" />
     <Compile Include="AirportModel\Plane.cs" />

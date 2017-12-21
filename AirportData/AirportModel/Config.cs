@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
-namespace AirportData
+namespace AirportData.AirportModel
 {
-    public class StatusFlight : Base<StatusFlight,string>
+    public class Config : Base<Config, string>
     {
-        public string StatusFlightName;
-        public string Description;
+        private string Param;
+        private string Val;
 
-        public StatusFlight() { }
-        public StatusFlight(string StatusFlightName, string Description)
+        public Config() { }
+        public Config(string Param, string Val)
         {
-            this.StatusFlightName = StatusFlightName;
-            this.Description = Description;
+            this.Param = Param;
+            this.Val = Val;
         }
         public override bool Delete()
         {
@@ -28,11 +23,11 @@ namespace AirportData
 
                 // prepare command string
                 string query = @"
-                 delete from tbStatusFlight
-                 where StatusFlight = @StatusFlight";
+                 delete from tbConfig
+                 where Param = @Param";
                 SqlParameter param1 = new SqlParameter();
-                param1.ParameterName = "@StatusFlight";
-                param1.Value = this.StatusFlightName;
+                param1.ParameterName = "@Param";
+                param1.Value = this.Param;
                 // 1. Instantiate a new command
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(param1);
@@ -45,7 +40,7 @@ namespace AirportData
                 if (conn != null)
                 {
                     conn.Close();
-                    Items.Remove(this.StatusFlightName);
+                    Items.Remove(this.Param);
                 }
             }
             return success;
@@ -57,7 +52,7 @@ namespace AirportData
             try
             {
                 conn.Open();
-                string query = @"select * from tbStatusFlight";
+                string query = @"select * from tbConfig";
                 // 1. Instantiate a new command with a query and connection
                 SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -66,11 +61,11 @@ namespace AirportData
                 Items.Clear();
                 while (rdr.Read())
                 {
-                    StatusFlight temp = new StatusFlight();
-                    temp.StatusFlightName = rdr[0].ToString();
-                    temp.Description = rdr[1].ToString();
+                    Config temp = new Config();
+                    temp.Param = rdr[0].ToString();
+                    temp.Val = rdr[1].ToString();
                     //словник об'єктів
-                    Items.Add(temp.StatusFlightName, temp);
+                    Items.Add(temp.Param, temp);
                 }
                 conn.Close();
                 success = true;
@@ -92,16 +87,16 @@ namespace AirportData
             try
             {
                 conn.Open();
-                string query = @"insert into tbStatusFlight
-                            (StatusFlight,Description)
-                            values (@StatusFlight,@Description)";
+                string query = @"insert into tbConfig
+                            (Param,Val)
+                            values (@Param,@Val)";
                 // 2. define parameters used in command object
                 SqlParameter param1 = new SqlParameter();
-                param1.ParameterName = "@StatusFlight";
-                param1.Value = this.StatusFlightName;
+                param1.ParameterName = "@Param";
+                param1.Value = this.Param;
                 SqlParameter param2 = new SqlParameter();
-                param2.ParameterName = "@Description";
-                param2.Value = this.Description;
+                param2.ParameterName = "@Val";
+                param2.Value = this.Val;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(param1);
                 cmd.Parameters.Add(param2);
@@ -127,18 +122,18 @@ namespace AirportData
                 conn.Open();
                 // prepare command string
                 string query = @"
-                update tbStatusFlight
-                set Description = @Description
-                where StatusFlight = @StatusFlight";
+                update tbConfig
+                set Val = @Val
+                where Param = @Param";
 
                 // 1. Instantiate a new command with command text only
 
                 SqlParameter param1 = new SqlParameter();
-                param1.ParameterName = "@StatusFlight";
-                param1.Value = this.StatusFlightName;
+                param1.ParameterName = "@Val";
+                param1.Value = this.Val;
                 SqlParameter param2 = new SqlParameter();
-                param2.ParameterName = "@Description";
-                param2.Value = this.Description;
+                param2.ParameterName = "@Param";
+                param2.Value = this.Param;
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.Add(param1);
                 cmd.Parameters.Add(param2);
