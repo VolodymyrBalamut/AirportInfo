@@ -67,6 +67,7 @@
     <Compile Include="PlaneTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TerminalTests.cs" />
+    <Compile Include="UserRoleTests.cs" />
     <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>

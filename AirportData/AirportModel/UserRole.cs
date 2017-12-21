@@ -12,6 +12,12 @@ namespace AirportData
         public string UserRoleName;
         public string UserRoleDesc;
 
+        public UserRole() { }
+        public UserRole(string UserRoleName, string UserRoleDesc)
+        {
+            this.UserRoleName = UserRoleName;
+            this.UserRoleDesc = UserRoleDesc;
+        }
         public override bool Delete()
         {
             bool success = false;
