@@ -110,6 +110,11 @@ namespace AirportData
                     string temp = "1" + WeekDay.Substring(1, 6);
                     WeekDay = temp;
                 }
+                else
+                {
+                    string temp = "0" + WeekDay.Substring(1, 6);
+                    WeekDay = temp;
+                }
             }
         }
         public bool Tuesday
@@ -131,6 +136,11 @@ namespace AirportData
                 if (value.Equals(true))
                 {
                     string temp = WeekDay.Substring(0, 1) + "2" + WeekDay.Substring(2, 5);
+                    WeekDay = temp;
+                }
+                else
+                {
+                    string temp = WeekDay.Substring(0, 1) + "0" + WeekDay.Substring(2, 5);
                     WeekDay = temp;
                 }
             }
@@ -156,6 +166,11 @@ namespace AirportData
                     string temp = WeekDay.Substring(0, 2) + "3" + WeekDay.Substring(3, 4);
                     WeekDay = temp;
                 }
+                else
+                {
+                    string temp = WeekDay.Substring(0, 2) + "0" + WeekDay.Substring(3, 4);
+                    WeekDay = temp;
+                }
             }
         }
         public bool Thursday
@@ -177,6 +192,11 @@ namespace AirportData
                 if (value.Equals(true))
                 {
                     string temp = WeekDay.Substring(0, 3) + "4" + WeekDay.Substring(4, 3);
+                    WeekDay = temp;
+                }
+                else
+                {
+                    string temp = WeekDay.Substring(0, 3) + "0" + WeekDay.Substring(4, 3);
                     WeekDay = temp;
                 }
             }
@@ -202,6 +222,11 @@ namespace AirportData
                     string temp = WeekDay.Substring(0, 4) + "5" + WeekDay.Substring(5, 2);
                     WeekDay = temp;
                 }
+                else
+                {
+                    string temp = WeekDay.Substring(0, 4) + "0" + WeekDay.Substring(5, 2);
+                    WeekDay = temp;
+                }
             }
         }
         public bool Suterday
@@ -225,6 +250,11 @@ namespace AirportData
                     string temp = WeekDay.Substring(0, 5) + "6" + WeekDay.Substring(6, 1);
                     WeekDay = temp;
                 }
+                else
+                {
+                    string temp = WeekDay.Substring(0, 5) + "0" + WeekDay.Substring(6, 1);
+                    WeekDay = temp;
+                }
             }
         }
         public bool Sunday
@@ -246,6 +276,11 @@ namespace AirportData
                 if (value.Equals(true))
                 {
                     string temp = WeekDay.Substring(0, 6) + "7";
+                    WeekDay = temp;
+                }
+                else
+                {
+                    string temp = WeekDay.Substring(0, 6) + "0";
                     WeekDay = temp;
                 }
             }

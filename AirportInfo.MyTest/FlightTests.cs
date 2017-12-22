@@ -58,5 +58,20 @@ namespace AirportInfo.MyTest
             temp.ArriveTime = "14:15";
             Assert.True(temp.Update());
         }
+
+        [Fact]
+        public void WeekDay()
+        {
+            Flight temp = new Flight();
+            temp.Monday = true;
+            temp.Tuesday = true;
+            temp.Wednesday = true;
+            temp.Thursday = false;
+            temp.Friday = false;
+            temp.Suterday = true;
+            temp.Sunday = true;
+            Assert.Equal(temp.WeekDay, "1230067");
+        }
+        
     }
 }

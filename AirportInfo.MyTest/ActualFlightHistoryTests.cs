@@ -43,6 +43,7 @@ namespace AirportInfo.MyTest
         public void UpdateTest()
         {
             ActualFlightHistory temp = new ActualFlightHistory("open", "close", DateTime.Now, 2);
+            temp.ActualFlightHistoryID = 1;
             Assert.True(temp.Update());
         }
     }
