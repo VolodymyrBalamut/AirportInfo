@@ -99,7 +99,14 @@ namespace AirportData
         }
 
         public Plane() { }
-        public Plane(string PlaneCode, string PlaneName,string Speed, string Distance, string Seats) { }
+        public Plane(string PlaneCode, string PlaneName,string Speed, string Distance, string Seats)
+        {
+            this.planeCode = PlaneCode;
+            this.planeName = PlaneName;
+            this.speed = Speed;
+            this.distance = Distance;
+            this.Seats = Seats;
+        }
         public override bool Delete()
         {
             bool success = false;
