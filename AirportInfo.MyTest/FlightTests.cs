@@ -16,7 +16,8 @@ namespace AirportInfo.MyTest
         [Fact]
         public void DeleteTest()
         {
-            Flight temp = Flight.GetFlight("jjjjj");
+            Flight temp = new Flight();
+            temp.FlightCode="jjjjj";
             //Assert.Equal(temp.Delete(), true);
             Assert.True(temp.Delete());
         }
@@ -25,6 +26,7 @@ namespace AirportInfo.MyTest
         public void GetAllTest()
         {
             //Assert.Equal(new Terminal().GetAll(), true);
+            Flight.GetFlight("jjjjj");
             Assert.True(new Flight().GetAll());
         }
 
@@ -39,6 +41,7 @@ namespace AirportInfo.MyTest
             temp.Friday = false;
             temp.Suterday = true;
             temp.Sunday = false;
+            temp.WeekDay = "1230067";
             temp.DepartAirport = new Airport("aaa", "asdd", "as", "fdff");
             temp.ArriveAirport = new Airport("bbb", "asdd", "as", "fdff");
             temp.Company = new Company("ccc", "dsf", "as", "fdsgsg g f");
@@ -60,6 +63,7 @@ namespace AirportInfo.MyTest
             temp.Friday = false;
             temp.Suterday = true;
             temp.Sunday = false;
+            temp.WeekDay = "1230067";
             temp.DepartAirport = new Airport("aaa", "asdd", "as", "fdff");
             temp.ArriveAirport = new Airport("bbf", "asdd", "as", "fdff");
             temp.Company = new Company("ccc", "dsf", "as", "fdsgsg g f");
