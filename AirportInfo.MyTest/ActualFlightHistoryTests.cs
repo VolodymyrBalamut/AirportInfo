@@ -29,6 +29,8 @@ namespace AirportInfo.MyTest
         public void GetAllTest()
         {
             //Assert.Equal(new Terminal().GetAll(), true);
+            ActualFlightHistory temp = new ActualFlightHistory("ff", "dfdf", DateTime.Now, 1);
+            temp.Insert();
             Assert.True(new ActualFlightHistory().GetAll());
         }
 

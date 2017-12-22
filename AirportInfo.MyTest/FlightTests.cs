@@ -26,7 +26,16 @@ namespace AirportInfo.MyTest
         public void GetAllTest()
         {
             //Assert.Equal(new Terminal().GetAll(), true);
-            Flight.GetFlight("jjjjj");
+            Flight temp = new Flight("bbb");
+            temp.WeekDay = "1230067";
+            temp.DepartAirport = new Airport("aaa", "asdd", "as", "fdff");
+            temp.ArriveAirport = new Airport("bbb", "asdd", "as", "fdff");
+            temp.Company = new Company("ccc", "dsf", "as", "fdsgsg g f");
+            temp.Plane = new Plane("aaa", "AAA", "120", "110", "1000 km");
+            temp.DepartTime = "12:30";
+            temp.ArriveTime = "14:15";
+            temp.Insert();
+            Flight.GetFlight("bbb");
             Assert.True(new Flight().GetAll());
         }
 

@@ -23,6 +23,8 @@ namespace AirportInfo.MyTest
         [Fact]
         public void GetAllTest()
         {
+            Company temp = new Company("tt", "django", "dd", "dd");
+            temp.Insert();
             Assert.True(new Company().GetAll());
         }
 
