@@ -30,6 +30,8 @@ namespace AirportInfo.MyTest
         public void GetAllTest()
         {
             //Assert.Equal(new Terminal().GetAll(), true);
+            User temp = new User("admin2", "11111", "admin2");
+            bool flag = temp.Insert();
             Assert.True(new User().GetAll());
         }
 
@@ -37,7 +39,9 @@ namespace AirportInfo.MyTest
         public void InsertTest()
         {
             User temp = new User("admin", "1111", "admin");
-            Assert.True(temp.Insert());
+            bool flag = temp.Insert();
+            User.getUser("admin", "1111");
+            Assert.True(flag);
         }
 
         [Fact]
