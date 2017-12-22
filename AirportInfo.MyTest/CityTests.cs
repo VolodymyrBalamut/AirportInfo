@@ -27,7 +27,7 @@ namespace AirportInfo.MyTest
         {
             //Assert.Equal(new Terminal().GetAll(), true);
             City temp = new City();
-            temp.setNewCity("UA", "Kyiv");
+            temp.setNewCity("ff", "dfdg");
             temp.Insert();
             Assert.True(new City().GetAll());
         }
