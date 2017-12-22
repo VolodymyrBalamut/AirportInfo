@@ -34,13 +34,6 @@ namespace AirportInfo.MyTest
         public void InsertTest()
         {
             Flight temp = new Flight("jjjjj");
-            temp.Monday = true;
-            temp.Tuesday = true;
-            temp.Wednesday = true;
-            temp.Thursday = false;
-            temp.Friday = false;
-            temp.Suterday = true;
-            temp.Sunday = false;
             temp.WeekDay = "1230067";
             temp.DepartAirport = new Airport("aaa", "asdd", "as", "fdff");
             temp.ArriveAirport = new Airport("bbb", "asdd", "as", "fdff");
@@ -56,13 +49,6 @@ namespace AirportInfo.MyTest
         {
             Flight temp = new Flight();
             temp.FlightCode = "jjjjj";
-            temp.Monday = true;
-            temp.Tuesday = true;
-            temp.Wednesday = true;
-            temp.Thursday = false;
-            temp.Friday = false;
-            temp.Suterday = true;
-            temp.Sunday = false;
             temp.WeekDay = "1230067";
             temp.DepartAirport = new Airport("aaa", "asdd", "as", "fdff");
             temp.ArriveAirport = new Airport("bbf", "asdd", "as", "fdff");

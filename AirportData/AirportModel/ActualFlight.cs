@@ -250,6 +250,9 @@ namespace AirportData
                 cmd.Parameters.Add(param2);
                 cmd.Parameters.Add(param3);
                 cmd.Parameters.Add(param4);
+                cmd.Parameters.Add(param5);
+                cmd.Parameters.Add(param6);
+                cmd.Parameters.Add(param7);
                 // 3. Call ExecuteNonQuery to send command
                 cmd.ExecuteNonQuery();
                 success = true;
