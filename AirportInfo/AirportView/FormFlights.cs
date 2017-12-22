@@ -208,12 +208,18 @@ namespace AirportInfo
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string FlightCode = getSelectedRow();
-            if(FlightCode != "")
+            DialogResult dialog = MessageBox.Show("Ви справді хочете видалити рейс?",
+            "Видалення", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialog == DialogResult.Yes)
             {
-                Flight flight = Flight.GetFlight(FlightCode);
-                flight.Delete();
-                RefreshFlights();
+                string FlightCode = getSelectedRow();
+                if (FlightCode != "")
+                {
+                    Flight flight = Flight.GetFlight(FlightCode);
+                    flight.Delete();
+                    RefreshFlights();
+                }
             }
             
         }

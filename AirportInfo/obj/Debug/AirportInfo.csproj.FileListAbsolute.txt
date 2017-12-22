@@ -20,3 +20,4 @@ D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportData.p
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.view.FormActualFlightConf.resources
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\bin\Debug\AirportData.dll.config
 D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.AirportView.FormActualFlightHistory.resources
+D:\Iт-52\5_semestr\Курсач\AirportInfo\AirportInfo\obj\Debug\AirportInfo.AirportView.FormUser.resources

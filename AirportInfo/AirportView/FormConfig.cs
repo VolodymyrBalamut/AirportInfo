@@ -1,4 +1,5 @@
-﻿using AirportData;
+﻿using AirportData.AirportModel;
+using AirportData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,27 +15,35 @@ namespace AirportInfo.view
 {
     public partial class FormConfig : Form
     {
-        protected SqlConnection conn = Base<ActualFlight,int>.conn;
-        protected DataSet ds;
-        protected DataSet ds2;
-        protected SqlDataAdapter da;
-        protected SqlDataAdapter da2;
         public FormConfig()
         {
             InitializeComponent();
-            ds = new DataSet();
-            ds2 = new DataSet();
-            da = new SqlDataAdapter("select * from tbTerminal", conn);
-            da2 = new SqlDataAdapter("select * from tbUser", conn);
         }
 
         private void FormConfig_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.DarkOrchid;
             this.FormBorderStyle = FormBorderStyle.Fixed3D;
-            da.Fill(ds, "tbTerminal");
-            dgvTerminal.DataSource = ds;
-            dgvTerminal.DataMember = "tbTerminal";
+            new Airport().GetAll();
+            cbAirport.DataSource = Airport.Items.Values.ToList();
+            Config confAirport = Config.getAirportCurrent();
+            cbAirport.Text = Airport.Items[confAirport.getVal()].AirportName;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Airport newAirport = (Airport)cbAirport.SelectedItem;
+            Config confAirport = new Config("AirportCode", newAirport.AirportCode);
+           
+            if (confAirport.Update())
+            {
+                MessageBox.Show("Аеропорт змінено на " + newAirport.AirportName, "Успіх",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Аеропорт не вдалося змінити", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

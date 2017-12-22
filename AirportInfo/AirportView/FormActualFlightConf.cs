@@ -18,19 +18,21 @@ namespace AirportInfo.view
             InitializeComponent();
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (ActualFlight.GenerateActualFlight(dateTimePicker.Value.ToString("yyyy-MM-dd")))
+            {
+                MessageBox.Show("Рейси на " + dateTimePicker.Value.ToString("yyyy-MM-dd") + " додані успішно", "Успіх",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Рейси на " + dateTimePicker.Value.ToString("yyyy-MM-dd") + " вже були додані", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void FormActualFlightConf_Load(object sender, EventArgs e)
         {
-            ActualFlight aflight = new ActualFlight();
-            Flight flight = new Flight();
-            Company company = new Company();
-            City city = new City();
-            Country country = new Country("","");
-            User user = new User();
-            Terminal terminal = new Terminal();
-            Airport airport = new Airport();
-            Plane plane = new Plane();
-            StatusFlight status = new StatusFlight();
-            
 
         }
     }

@@ -13,6 +13,10 @@ namespace AirportData.AirportModel
             this.Param = Param;
             this.Val = Val;
         }
+        public string getVal()
+        {
+            return Val;
+        }
         public override bool Delete()
         {
             bool success = false;
@@ -150,6 +154,39 @@ namespace AirportData.AirportModel
                 }
             }
             return success;
+        }
+
+        public static Config getAirportCurrent()
+        {
+           
+            try
+            {
+                conn.Open();
+                string query = @"select * from tbConfig where Param = 'AirportCode'";
+                // 1. Instantiate a new command with a query and connection
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                // 2. Call Execute reader to get query results
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Config temp = new Config();
+                    temp.Param = rdr[0].ToString();
+                    temp.Val = rdr[1].ToString();
+                    //словник об'єктів
+                    return temp;
+                }
+                conn.Close();
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return null;
         }
     }
 }

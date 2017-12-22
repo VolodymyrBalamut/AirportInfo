@@ -31,14 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFlights = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemConf = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemStatus = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemAFlights = new System.Windows.Forms.ToolStripMenuItem();
+            this.історіяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemGenerateActualFlight = new System.Windows.Forms.ToolStripMenuItem();
             this.довідникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCountry = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCity = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAirport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemPlane = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCompany = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemConf = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemStatus = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -46,10 +50,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolStripMenuItemSetting = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemAFlights = new System.Windows.Forms.ToolStripMenuItem();
-            this.історіяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemUser = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -78,21 +79,28 @@
             this.toolStripMenuItemFlights.Text = "Розклад рейсів";
             this.toolStripMenuItemFlights.Click += new System.EventHandler(this.toolStripMenuItemFlights_Click);
             // 
-            // toolStripMenuItemConf
+            // toolStripMenuItemAFlights
             // 
-            this.toolStripMenuItemConf.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemStatus,
-            this.toolStripMenuItemSetting});
-            this.toolStripMenuItemConf.Name = "toolStripMenuItemConf";
-            this.toolStripMenuItemConf.Size = new System.Drawing.Size(66, 20);
-            this.toolStripMenuItemConf.Text = "Система";
+            this.toolStripMenuItemAFlights.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.історіяToolStripMenuItem,
+            this.toolStripMenuItemGenerateActualFlight});
+            this.toolStripMenuItemAFlights.Name = "toolStripMenuItemAFlights";
+            this.toolStripMenuItemAFlights.Size = new System.Drawing.Size(52, 20);
+            this.toolStripMenuItemAFlights.Text = "Рейси";
             // 
-            // toolStripMenuItemStatus
+            // історіяToolStripMenuItem
             // 
-            this.toolStripMenuItemStatus.Name = "toolStripMenuItemStatus";
-            this.toolStripMenuItemStatus.Size = new System.Drawing.Size(166, 22);
-            this.toolStripMenuItemStatus.Text = "Оновити статуси";
-            this.toolStripMenuItemStatus.Click += new System.EventHandler(this.toolStripMenuItemStatus_Click);
+            this.історіяToolStripMenuItem.Name = "історіяToolStripMenuItem";
+            this.історіяToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.історіяToolStripMenuItem.Text = "Історія";
+            this.історіяToolStripMenuItem.Click += new System.EventHandler(this.історіяToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItemGenerateActualFlight
+            // 
+            this.toolStripMenuItemGenerateActualFlight.Name = "toolStripMenuItemGenerateActualFlight";
+            this.toolStripMenuItemGenerateActualFlight.Size = new System.Drawing.Size(178, 22);
+            this.toolStripMenuItemGenerateActualFlight.Text = "Згенерувати рейси";
+            this.toolStripMenuItemGenerateActualFlight.Click += new System.EventHandler(this.toolStripMenuItemGenerateActualFlight_Click);
             // 
             // довідникиToolStripMenuItem
             // 
@@ -124,7 +132,7 @@
             // 
             this.toolStripMenuItemAirport.Name = "toolStripMenuItemAirport";
             this.toolStripMenuItemAirport.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItemAirport.Text = "Аеоропорти";
+            this.toolStripMenuItemAirport.Text = "Аеропорти";
             this.toolStripMenuItemAirport.Click += new System.EventHandler(this.toolStripMenuItemAirport_Click);
             // 
             // toolStripMenuItemPlane
@@ -141,6 +149,30 @@
             this.toolStripMenuItemCompany.Text = "Перевізники";
             this.toolStripMenuItemCompany.Click += new System.EventHandler(this.toolStripMenuItemCompany_Click);
             // 
+            // toolStripMenuItemConf
+            // 
+            this.toolStripMenuItemConf.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemStatus,
+            this.toolStripMenuItemSetting,
+            this.toolStripMenuItemUser});
+            this.toolStripMenuItemConf.Name = "toolStripMenuItemConf";
+            this.toolStripMenuItemConf.Size = new System.Drawing.Size(66, 20);
+            this.toolStripMenuItemConf.Text = "Система";
+            // 
+            // toolStripMenuItemStatus
+            // 
+            this.toolStripMenuItemStatus.Name = "toolStripMenuItemStatus";
+            this.toolStripMenuItemStatus.Size = new System.Drawing.Size(166, 22);
+            this.toolStripMenuItemStatus.Text = "Оновити статуси";
+            this.toolStripMenuItemStatus.Click += new System.EventHandler(this.toolStripMenuItemStatus_Click);
+            // 
+            // toolStripMenuItemSetting
+            // 
+            this.toolStripMenuItemSetting.Name = "toolStripMenuItemSetting";
+            this.toolStripMenuItemSetting.Size = new System.Drawing.Size(166, 22);
+            this.toolStripMenuItemSetting.Text = "Налаштування";
+            this.toolStripMenuItemSetting.Click += new System.EventHandler(this.toolStripMenuItemSetting_Click);
+            // 
             // dgv
             // 
             this.dgv.BackgroundColor = System.Drawing.Color.DarkOrchid;
@@ -154,7 +186,7 @@
             // 
             this.dateTimePicker.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(743, 40);
+            this.dateTimePicker.Location = new System.Drawing.Point(865, 43);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(91, 20);
             this.dateTimePicker.TabIndex = 2;
@@ -208,40 +240,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(668, 40);
+            this.label2.Location = new System.Drawing.Point(790, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "Дата";
             // 
-            // toolStripMenuItemSetting
+            // toolStripMenuItemUser
             // 
-            this.toolStripMenuItemSetting.Name = "toolStripMenuItemSetting";
-            this.toolStripMenuItemSetting.Size = new System.Drawing.Size(166, 22);
-            this.toolStripMenuItemSetting.Text = "Налаштування";
-            this.toolStripMenuItemSetting.Click += new System.EventHandler(this.toolStripMenuItemSetting_Click);
-            // 
-            // toolStripMenuItemAFlights
-            // 
-            this.toolStripMenuItemAFlights.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.історіяToolStripMenuItem,
-            this.налаштуванняToolStripMenuItem});
-            this.toolStripMenuItemAFlights.Name = "toolStripMenuItemAFlights";
-            this.toolStripMenuItemAFlights.Size = new System.Drawing.Size(52, 20);
-            this.toolStripMenuItemAFlights.Text = "Рейси";
-            // 
-            // історіяToolStripMenuItem
-            // 
-            this.історіяToolStripMenuItem.Name = "історіяToolStripMenuItem";
-            this.історіяToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.історіяToolStripMenuItem.Text = "Історія";
-            this.історіяToolStripMenuItem.Click += new System.EventHandler(this.історіяToolStripMenuItem_Click);
-            // 
-            // налаштуванняToolStripMenuItem
-            // 
-            this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
-            this.налаштуванняToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.налаштуванняToolStripMenuItem.Text = "Налаштування";
+            this.toolStripMenuItemUser.Name = "toolStripMenuItemUser";
+            this.toolStripMenuItemUser.Size = new System.Drawing.Size(166, 22);
+            this.toolStripMenuItemUser.Text = "Користувачі";
+            this.toolStripMenuItemUser.Click += new System.EventHandler(this.toolStripMenuItemUser_Click);
             // 
             // FormMain
             // 
@@ -259,6 +269,7 @@
             this.Name = "FormMain";
             this.Text = "Головна форма";
             this.Activated += new System.EventHandler(this.FormMain_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
@@ -294,6 +305,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSetting;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAFlights;
         private System.Windows.Forms.ToolStripMenuItem історіяToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemGenerateActualFlight;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemUser;
     }
 }

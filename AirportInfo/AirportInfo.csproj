@@ -94,6 +94,12 @@
     <Compile Include="AirportView\FormFlights.Designer.cs">
       <DependentUpon>FormFlights.cs</DependentUpon>
     </Compile>
+    <Compile Include="AirportView\FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirportView\FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AirportView\FormLogin.cs">
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AirportView\FormFlights.resx">
       <DependentUpon>FormFlights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AirportView\FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

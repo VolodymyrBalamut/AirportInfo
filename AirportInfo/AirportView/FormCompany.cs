@@ -35,6 +35,11 @@ namespace AirportInfo.view
             dgv.Columns["Callsign"].HeaderText = "Дивіз";
             dgv.AutoResizeColumns();
             dgv.ReadOnly = true;
+
+            if (FormLogin.user.UserRoleName == "user")
+            {
+                btnUpdate.Visible = false;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -285,5 +285,30 @@ namespace AirportData
                 }
             }
         }
+        public static bool GenerateActualFlight(string date)
+        {
+            bool success = false;
+            try
+            {
+                conn.Open();
+                string query = @"exec spLoadActualFlight @Date";
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@Date";
+                param1.Value = date;
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add(param1);
+                cmd.ExecuteNonQuery();
+                success = true;
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return success;
+        }
     }
 }

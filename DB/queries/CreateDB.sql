@@ -153,7 +153,11 @@ FOREIGN KEY (NewStatus) REFERENCES tbStatusFlight(StatusFlight);
 insert into tbUserRole(UserRoleName,UserRoleDesc) values('admin','Адміністратор')
 insert into tbUserRole(UserRoleName,UserRoleDesc) values('operator','Оператор')
 insert into tbUserRole(UserRoleName,UserRoleDesc) values('user','Користувач')
-insert into tbUser(Login,Password,UserRoleName) values('user','1111','admin')
+
+insert into tbUser(Login,Password,UserRoleName) values('admin','1111','admin')
+insert into tbUser(Login,Password,UserRoleName) values('operator','1111','operator')
+insert into tbUser(Login,Password,UserRoleName) values('user','1111','user')
+
 insert into tbStatusFlight(StatusFlight,Description) values('waiting','Очікуання')
 insert into tbStatusFlight(StatusFlight,Description) values('checkin','Реєстрація')
 insert into tbStatusFlight(StatusFlight,Description) values('boarding','Посадка')

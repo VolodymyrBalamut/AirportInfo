@@ -32,9 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbAirport = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgvTerminal = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTerminal)).BeginInit();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -42,7 +40,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(155, 21);
+            this.label2.Location = new System.Drawing.Point(109, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 24);
             this.label2.TabIndex = 14;
@@ -70,34 +68,26 @@
             this.cbAirport.Size = new System.Drawing.Size(196, 24);
             this.cbAirport.TabIndex = 15;
             // 
-            // label3
+            // btnAdd
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.Gold;
-            this.label3.Location = new System.Drawing.Point(22, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Термінали";
-            // 
-            // dgvTerminal
-            // 
-            this.dgvTerminal.BackgroundColor = System.Drawing.Color.DarkOrchid;
-            this.dgvTerminal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTerminal.Location = new System.Drawing.Point(134, 154);
-            this.dgvTerminal.Name = "dgvTerminal";
-            this.dgvTerminal.Size = new System.Drawing.Size(196, 150);
-            this.dgvTerminal.TabIndex = 18;
+            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(88, 138);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(205, 53);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "Зберегти";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrchid;
-            this.ClientSize = new System.Drawing.Size(369, 376);
-            this.Controls.Add(this.dgvTerminal);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(369, 214);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbAirport);
             this.Controls.Add(this.label2);
@@ -105,7 +95,6 @@
             this.Name = "FormConfig";
             this.Text = "Налаштування";
             this.Load += new System.EventHandler(this.FormConfig_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTerminal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,7 +105,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbAirport;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvTerminal;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

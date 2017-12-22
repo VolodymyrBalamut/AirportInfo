@@ -66,4 +66,23 @@ AS
 	update tbActualFlight set StatusFlight = 'arrived'
 	from  tbActualFlight
 	inner join #tempFlight on tbActualFlight.FlightCode = #tempFlight.FlightCode
-	where ActualFlightDate = @date and DepartAirportCode = @airportcode and DATEDIFF(minute,getdate(),DepartDataTime)<=-120 
+	where ActualFlightDate = @date and DepartAirportCode = @airportcode and DATEDIFF(minute,getdate(),DepartDataTime)<=-120
+
+	/*status arrive waiting*/
+	update tbActualFlight set StatusFlight = 'waiting'
+	from  tbActualFlight
+	inner join #tempFlight on tbActualFlight.FlightCode = #tempFlight.FlightCode
+	where ActualFlightDate = @date and ArriveAirportCode = @airportcode and DATEDIFF(minute,getdate(),ArriveDateTime)>120
+
+	/*status arrive flying*/
+	update tbActualFlight set StatusFlight = 'flying'
+	from  tbActualFlight
+	inner join #tempFlight on tbActualFlight.FlightCode = #tempFlight.FlightCode
+	where ActualFlightDate = @date and ArriveAirportCode = @airportcode and DATEDIFF(minute,getdate(),ArriveDateTime)<=120 and
+	DATEDIFF(minute,getdate(),ArriveDateTime)>0
+
+	/*status arrive arrived*/
+	update tbActualFlight set StatusFlight = 'arrived'
+	from  tbActualFlight
+	inner join #tempFlight on tbActualFlight.FlightCode = #tempFlight.FlightCode
+	where ActualFlightDate = @date and ArriveAirportCode = @airportcode and DATEDIFF(minute,getdate(),ArriveDateTime)<=0

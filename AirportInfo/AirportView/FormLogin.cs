@@ -13,6 +13,7 @@ namespace AirportInfo.view
 {
     public partial class FormLogin : Form
     {
+        public static User user;
         public FormLogin()
         {
             InitializeComponent();
@@ -20,11 +21,13 @@ namespace AirportInfo.view
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            User user = User.getUser(tbLogin.Text, tbPassword.Text);
+            user = User.getUser(tbLogin.Text, tbPassword.Text);
             if (user.Login == tbLogin.Text && user.Password == tbPassword.Text)
             {
                 MessageBox.Show("Добрий день,  " + user.Login, "Авторизація пройшла успішно", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                this.Hide();
+                FormMain form = new FormMain();
+                form.ShowDialog();
 
             }
             else
@@ -48,6 +51,11 @@ namespace AirportInfo.view
             {
                 tbPassword.PasswordChar = '*';
             }
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

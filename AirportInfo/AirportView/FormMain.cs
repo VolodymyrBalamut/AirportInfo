@@ -20,14 +20,26 @@ namespace AirportInfo.view
         public FormMain()
         {
             InitializeComponent();
-            Form form = new FormLogin();
-            form.ShowDialog();
+           /* Form form = new FormLogin();
+            form.ShowDialog();*/
            
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            
+            if(FormLogin.user.UserRoleName == "user")
+            {
+                toolStripMenuItemConf.Visible = false;
+                toolStripMenuItemFlights.Visible = false;
+                toolStripMenuItemAFlights.Visible = false;
+            }
+            if (FormLogin.user.UserRoleName == "operator")
+            {
+                toolStripMenuItemFlights.Enabled = false;
+                toolStripMenuItemSetting.Enabled = false;
+                toolStripMenuItemUser.Enabled = false;
+            }
+
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -147,6 +159,39 @@ namespace AirportInfo.view
         private void історіяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormActualFlightHistory form = new FormActualFlightHistory();
+            form.ShowDialog();
+        }
+        bool exitfirst = true;
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (exitfirst)
+            {
+                DialogResult dialog = MessageBox.Show("Ви справді хочете вийти з програми?",
+                "Вихід", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialog == DialogResult.Yes)
+                {
+                    exitfirst = false;
+                    Application.Exit();
+                }
+                else if (dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+                Application.Exit();
+        }
+
+        private void toolStripMenuItemGenerateActualFlight_Click(object sender, EventArgs e)
+        {
+            FormActualFlightConf form = new FormActualFlightConf();
+            form.ShowDialog();
+        }
+
+        private void toolStripMenuItemUser_Click(object sender, EventArgs e)
+        {
+            FormUser form = new FormUser();
             form.ShowDialog();
         }
     }
