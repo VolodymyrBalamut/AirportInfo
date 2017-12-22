@@ -71,8 +71,35 @@ namespace AirportInfo.MyTest
             temp.Friday = false;
             temp.Suterday = true;
             temp.Sunday = true;
+
+            bool monday = temp.Monday;
+            bool tuesday = temp.Tuesday;
+            bool wednesday = temp.Wednesday;
+            bool thursday = temp.Thursday;
+            bool friday = temp.Friday;
+            bool suturday = temp.Suterday;
+            bool sunday = temp.Sunday;
             Assert.Equal(temp.WeekDay, "1230067");
         }
-        
+
+        [Fact]
+        public void DepartHour()
+        {
+            Flight temp = new Flight();
+            temp.DepartTime = "14:30";
+            string departHour = temp.DepartHour;
+            string departMinutes = temp.DepartMinutes;
+            Assert.Equal(departHour, "14");
+        }
+        [Fact]
+        public void ArriveHour()
+        {
+            Flight temp = new Flight();
+            temp.ArriveTime = "14:30";
+            string arriveHour = temp.ArriveHour;
+            string arriveMinutes = temp.ArriveMinutes;
+            Assert.Equal(arriveHour, "14");
+        }
+
     }
 }
