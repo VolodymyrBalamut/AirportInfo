@@ -16,8 +16,7 @@ namespace AirportInfo.MyTest
         [Fact]
         public void DeleteTest()
         {
-            Flight temp = new Flight();
-            temp.FlightCode = "jjjjj";
+            Flight temp = Flight.GetFlight("jjjjj");
             //Assert.Equal(temp.Delete(), true);
             Assert.True(temp.Delete());
         }
@@ -32,8 +31,7 @@ namespace AirportInfo.MyTest
         [Fact]
         public void InsertTest()
         {
-            Flight temp = new Flight();
-            temp.FlightCode = "jjjjj";
+            Flight temp = new Flight("jjjjj");
             temp.Monday = true;
             temp.Tuesday = true;
             temp.Wednesday = true;

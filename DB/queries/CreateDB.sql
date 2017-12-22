@@ -152,6 +152,7 @@ FOREIGN KEY (NewStatus) REFERENCES tbStatusFlight(StatusFlight);
 
 insert into tbUserRole(UserRoleName,UserRoleDesc) values('admin','Адміністратор')
 insert into tbUserRole(UserRoleName,UserRoleDesc) values('operator','Оператор')
+insert into tbUserRole(UserRoleName,UserRoleDesc) values('user','Користувач')
 insert into tbUser(Login,Password,UserRoleName) values('user','1111','admin')
 insert into tbStatusFlight(StatusFlight,Description) values('waiting','Очікуання')
 insert into tbStatusFlight(StatusFlight,Description) values('checkin','Реєстрація')
@@ -165,3 +166,31 @@ insert into tbTerminal(TerminalCode) values('A')
 insert into tbTerminal(TerminalCode) values('B')
 insert into tbTerminal(TerminalCode) values('C')
 insert into tbTerminal(TerminalCode) values('D')
+
+create TRIGGER trgActualFlightInsert ON  [tbActualFlight]
+FOR insert
+AS  
+begin
+	insert into [tbActualFlightHistory]
+		(OldStatus,NewStatus,DateChange,ActualFlightID) 
+	SELECT 
+		i.StatusFlight, i.StatusFlight, GetDate(),i.ActualFlightID
+	FROM 
+		inserted i	
+end
+
+create TRIGGER trgActualFlightUpdate ON  [tbActualFlight]
+FOR UPDATE
+AS  
+begin
+	if update(StatusFlight)
+	begin
+		insert into [tbActualFlightHistory]
+			(OldStatus,NewStatus,DateChange,ActualFlightID) 
+		SELECT 
+			d.StatusFlight, i.StatusFlight, GetDate(),i.ActualFlightID
+		FROM 
+			inserted i
+			inner join deleted d on i.ActualFlightID = d.ActualFlightID
+	end
+end

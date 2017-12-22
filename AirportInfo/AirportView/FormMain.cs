@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AirportData;
+using AirportInfo.AirportView;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -59,11 +61,7 @@ namespace AirportInfo.view
             FormFlights form = new FormFlights();
             form.ShowDialog();
         }
-        private void toolStripMenuItemConf_Click(object sender, EventArgs e)
-        {
-            FormConfig form = new FormConfig();
-            form.ShowDialog();
-        }
+       
 
         private void FormMain_Activated(object sender, EventArgs e)
         {
@@ -85,6 +83,7 @@ namespace AirportInfo.view
             dgv.Columns["TerminalCode"].HeaderText = "Термінал";
             dgv.Columns["StatusFlight"].HeaderText = "Статус";
             dgv.Columns["ActualFlightDate"].Visible = false;
+            dgv.Columns["ActualFlightID"].Visible = false;
             dgv.AutoResizeColumns();
             dgv.ReadOnly = true;
 
@@ -99,6 +98,7 @@ namespace AirportInfo.view
             dgv2.Columns["TerminalCode"].HeaderText = "Термінал";
             dgv2.Columns["StatusFlight"].HeaderText = "Статус";
             dgv2.Columns["ActualFlightDate"].Visible = false;
+            dgv2.Columns["ActualFlightID"].Visible = false;
             dgv2.ReadOnly = true;
         }
 
@@ -129,6 +129,24 @@ namespace AirportInfo.view
         private void toolStripMenuItemCompany_Click(object sender, EventArgs e)
         {
             FormCompany form = new FormCompany();
+            form.ShowDialog();
+        }
+
+        private void toolStripMenuItemStatus_Click(object sender, EventArgs e)
+        {
+            ActualFlight.RefreshStatus();
+            RefreshFlights(dateTimePicker.Value.ToString("yyyy-MM-dd"));
+        }
+
+        private void toolStripMenuItemSetting_Click(object sender, EventArgs e)
+        {
+            FormConfig form = new FormConfig();
+            form.ShowDialog();
+        }
+
+        private void історіяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormActualFlightHistory form = new FormActualFlightHistory();
             form.ShowDialog();
         }
     }

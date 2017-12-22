@@ -123,6 +123,7 @@
             // dgvFlights
             // 
             this.dgvFlights.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFlights.BackgroundColor = System.Drawing.Color.DarkOrchid;
             this.dgvFlights.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFlights.Location = new System.Drawing.Point(12, 413);
             this.dgvFlights.Name = "dgvFlights";

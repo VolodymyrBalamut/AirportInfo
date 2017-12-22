@@ -264,5 +264,23 @@ namespace AirportData
             }
             return success;
         }
+        public static void RefreshStatus()
+        {
+            try
+            {
+                conn.Open();
+                string query = @"exec spUpdateStatus";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

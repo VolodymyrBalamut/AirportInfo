@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirportView\FormActualFlightHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirportView\FormActualFlightHistory.Designer.cs">
+      <DependentUpon>FormActualFlightHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="AirportView\FormActualFlightConf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="AirportView\FormActualFlightConf.resx">
       <DependentUpon>FormActualFlightConf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AirportView\FormActualFlightHistory.resx">
+      <DependentUpon>FormActualFlightHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AirportView\FormAirport.resx">
       <DependentUpon>FormAirport.cs</DependentUpon>
