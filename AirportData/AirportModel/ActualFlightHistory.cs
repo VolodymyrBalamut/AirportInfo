@@ -148,7 +148,7 @@ namespace AirportData.AirportModel
                 set OldStatus = @OldStatus,
                     NewStatus = @NewStatus,
                     DateChange = @DateChange,
-                    ActualFlightID = @ActualFlightID
+                    ActualFlightID = @ActualFlightID 
                 where ActualFlightHistoryID = @ActualFlightHistoryID";
 
                 // 1. Instantiate a new command with command text only
@@ -174,6 +174,7 @@ namespace AirportData.AirportModel
                 cmd.Parameters.Add(param2);
                 cmd.Parameters.Add(param3);
                 cmd.Parameters.Add(param4);
+                cmd.Parameters.Add(param5);
                 // 3. Call ExecuteNonQuery to send command
                 cmd.ExecuteNonQuery();
                 success = true;

@@ -63,6 +63,7 @@ namespace AirportInfo.MyTest
         public void WeekDay()
         {
             Flight temp = new Flight();
+            temp.WeekDay = "0000000";
             temp.Monday = true;
             temp.Tuesday = true;
             temp.Wednesday = true;

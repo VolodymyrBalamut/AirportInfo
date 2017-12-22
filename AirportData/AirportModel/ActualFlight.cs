@@ -212,7 +212,7 @@ namespace AirportData
                 conn.Open();
                 // prepare command string
                 string query = @"
-                update tActualFlight
+                update tbActualFlight
                 set FlightCode = @FlightCode,
                     ActualFlightDate = @ActualFlightDate,
                     PlaneCode = @PlaneCode,
